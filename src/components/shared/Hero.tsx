@@ -1,0 +1,107 @@
+import { Search, Building2, Briefcase, Users, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+
+export default function Hero() {
+  return (
+    <section className="hero-gradient text-white py-16 md:py-24 lg:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-4xl mx-auto">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            <span className="text-sm font-medium">Charlotte&apos;s #1 Roofing Resource</span>
+          </div>
+
+          {/* Main Headline - Voice Search Optimized */}
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+            Find the Best Roofing Companies in Charlotte, NC
+          </h1>
+
+          {/* Subheadline */}
+          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Browse 25+ top-rated roofers with 4.8+ star Google ratings.
+            Find jobs, hire crews, and get instant roof estimates.
+          </p>
+
+          {/* Search Bar */}
+          <div className="max-w-xl mx-auto mb-10">
+            <form action="/companies" method="GET" className="relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <input
+                type="text"
+                name="search"
+                placeholder="Search roofing companies, services..."
+                className="w-full pl-12 pr-4 py-4 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-white/30 text-base"
+              />
+              <button
+                type="submit"
+                className="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-2 bg-secondary text-white font-semibold rounded-full hover:bg-red-600 transition"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+
+          {/* Quick Action Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            <Link
+              href="/companies"
+              className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition"
+            >
+              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                <Building2 className="w-5 h-5" />
+              </div>
+              <div className="text-left">
+                <span className="block font-semibold">Find Companies</span>
+                <span className="text-sm text-white/70">25+ Top Roofers</span>
+              </div>
+              <ArrowRight className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition" />
+            </Link>
+
+            <Link
+              href="/jobs"
+              className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition"
+            >
+              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                <Briefcase className="w-5 h-5" />
+              </div>
+              <div className="text-left">
+                <span className="block font-semibold">Roofing Jobs</span>
+                <span className="text-sm text-white/70">Now Hiring</span>
+              </div>
+              <ArrowRight className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition" />
+            </Link>
+
+            <Link
+              href="/crews"
+              className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition"
+            >
+              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                <Users className="w-5 h-5" />
+              </div>
+              <div className="text-left">
+                <span className="block font-semibold">Find Crews</span>
+                <span className="text-sm text-white/70">Sales & Install</span>
+              </div>
+              <ArrowRight className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition" />
+            </Link>
+          </div>
+
+          {/* Instant Estimate CTA */}
+          <div className="mt-10">
+            <a
+              href="https://instantroofestimate.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-bold rounded-full hover:bg-red-600 transition text-lg cta-pulse"
+            >
+              Get an Instant Roof Estimate
+              <ArrowRight className="w-5 h-5" />
+            </a>
+            <p className="text-sm text-white/70 mt-3">Free estimate in under 60 seconds</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
