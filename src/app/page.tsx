@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Building2, Briefcase, Users, ArrowRight, Home as HomeIcon, Warehouse, DollarSign, FileText, CheckCircle, Star } from 'lucide-react'
+import { Building2, ArrowRight, Home as HomeIcon, Warehouse, DollarSign, FileText, Star } from 'lucide-react'
 import Hero from '@/components/shared/Hero'
 import FeaturedCompany from '@/components/companies/FeaturedCompany'
 import CompanyCard from '@/components/companies/CompanyCard'
@@ -22,8 +22,8 @@ const homepageFAQs = [
     answer: "For Charlotte's hot, humid summers and occasional severe storms, architectural shingles are the most popular choice due to their durability and wind resistance. Metal roofing is excellent for heat reflection and longevity. Both materials handle Charlotte's climate well, with proper installation being key."
   },
   {
-    question: "How do I find roofing jobs in Charlotte?",
-    answer: "Charlotte Roofing Hub features a dedicated job board where local roofing companies post open positions. You can find jobs for sales reps, crew leaders, installers, and laborers. Visit our Jobs section to browse current openings or register as a crew member to be discovered by employers."
+    question: "How do I choose the right roofing contractor in Charlotte?",
+    answer: "Look for contractors with strong Google ratings (4.8+), proper licensing and insurance, BBB accreditation, and manufacturer certifications like GAF Master Elite or Owens Corning Preferred. Charlotte Roofing Hub only lists verified companies meeting these quality standards."
   },
   {
     question: "How long does a roof replacement take in Charlotte?",
@@ -36,7 +36,7 @@ const stats = [
   { label: 'Top-Rated Companies', value: '25+', icon: Building2 },
   { label: 'Average Rating', value: '4.9', icon: Star },
   { label: 'Cities Served', value: '15+', icon: HomeIcon },
-  { label: 'Jobs Posted', value: '50+', icon: Briefcase },
+  { label: 'Years Combined Exp.', value: '200+', icon: FileText },
 ]
 
 export default function HomePage() {
@@ -147,89 +147,6 @@ export default function HomePage() {
                 Tips, guides, and news about roofing in Charlotte
               </p>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Jobs & Crews Section */}
-      <section className="py-12 md:py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* For Companies */}
-            <div className="bg-white rounded-xl p-8 shadow-md">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Briefcase className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">For Roofing Companies</h3>
-              </div>
-              <p className="text-gray-600 mb-6">
-                Looking to hire experienced roofers, sales reps, or crews? Post your job openings and connect with qualified professionals in Charlotte.
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-center gap-2 text-sm text-gray-700">
-                  <CheckCircle className="w-4 h-4 text-green-500" />
-                  Post unlimited job listings
-                </li>
-                <li className="flex items-center gap-2 text-sm text-gray-700">
-                  <CheckCircle className="w-4 h-4 text-green-500" />
-                  Browse available crews
-                </li>
-                <li className="flex items-center gap-2 text-sm text-gray-700">
-                  <CheckCircle className="w-4 h-4 text-green-500" />
-                  Get featured on our platform
-                </li>
-              </ul>
-              <Link
-                href="/jobs/post"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-light transition"
-              >
-                Post a Job
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            {/* For Crews */}
-            <div className="bg-white rounded-xl p-8 shadow-md">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
-                  <Users className="w-6 h-6 text-secondary" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">For Sales Reps & Crews</h3>
-              </div>
-              <p className="text-gray-600 mb-6">
-                Looking for work with a roofing company in Charlotte? Register your profile and let companies find you, or browse current openings.
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-center gap-2 text-sm text-gray-700">
-                  <CheckCircle className="w-4 h-4 text-green-500" />
-                  Create your profile for free
-                </li>
-                <li className="flex items-center gap-2 text-sm text-gray-700">
-                  <CheckCircle className="w-4 h-4 text-green-500" />
-                  Browse job listings
-                </li>
-                <li className="flex items-center gap-2 text-sm text-gray-700">
-                  <CheckCircle className="w-4 h-4 text-green-500" />
-                  Get discovered by employers
-                </li>
-              </ul>
-              <div className="flex gap-3">
-                <Link
-                  href="/crews/register"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-red-600 transition"
-                >
-                  Register Now
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/jobs"
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition"
-                >
-                  View Jobs
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </section>

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nRemove jobs and crews features from website\n\n- Delete jobs pages \\(/jobs, /jobs/post\\)\n- Delete crews pages \\(/crews, /crews/register\\)\n- Update Header navigation to remove Jobs and Find Crews links\n- Remove Post a Job CTA button from header\n- Update Footer to remove Jobs & Crews section\n- Update homepage to remove Jobs & Crews section\n- Update about page to remove job board and crew network references\n- Update Hero quick actions to show Residential and Materials instead\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}

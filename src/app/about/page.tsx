@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Home, Building2, Briefcase, Users, Star, Target, Heart, Shield, ArrowRight } from 'lucide-react'
+import { Home, Building2, Star, Target, Heart, Shield, ArrowRight, FileText } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'About Charlotte Roofing Hub | Your Trusted Roofing Resource',
-  description: 'Charlotte Roofing Hub is the definitive resource for finding top-rated roofing companies, jobs, and professionals in Charlotte, NC. Learn about our mission.',
+  description: 'Charlotte Roofing Hub is the definitive resource for finding top-rated roofing companies in Charlotte, NC. Learn about our mission.',
 }
 
 export default function AboutPage() {
@@ -18,7 +18,7 @@ export default function AboutPage() {
               About Charlotte Roofing Hub
             </h1>
             <p className="text-lg md:text-xl text-white/90">
-              Your trusted source for finding quality roofing companies, jobs, and professionals
+              Your trusted source for finding quality roofing companies
               in Charlotte, North Carolina.
             </p>
           </div>
@@ -69,7 +69,7 @@ export default function AboutPage() {
             What We Offer
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white rounded-xl p-6 text-center shadow-sm">
               <Building2 className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-gray-900 mb-2">Company Directory</h3>
@@ -80,20 +80,11 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <Briefcase className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">Job Board</h3>
+              <FileText className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 className="font-bold text-gray-900 mb-2">Roofing Guides</h3>
               <p className="text-sm text-gray-600">
-                Connect roofing companies with talented sales reps, installers, and crew leaders
-                in the Charlotte area.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <Users className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">Crew Network</h3>
-              <p className="text-sm text-gray-600">
-                Help roofing professionals find work and help companies find reliable crews
-                and subcontractors.
+                In-depth guides on residential, commercial, and specialty roofing
+                to help you make informed decisions.
               </p>
             </div>
 
@@ -101,7 +92,7 @@ export default function AboutPage() {
               <Star className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-gray-900 mb-2">Expert Content</h3>
               <p className="text-sm text-gray-600">
-                Comprehensive guides on roofing materials, costs, and what to expect when
+                Comprehensive information on roofing materials, costs, and what to expect when
                 hiring a roofer in Charlotte.
               </p>
             </div>
@@ -155,7 +146,7 @@ export default function AboutPage() {
             Get Involved
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
             <div className="bg-white rounded-xl p-6 text-center shadow-sm">
               <h3 className="font-bold text-gray-900 mb-4">Roofing Companies</h3>
               <p className="text-sm text-gray-600 mb-4">
@@ -170,29 +161,18 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-4">Hiring?</h3>
+              <h3 className="font-bold text-gray-900 mb-4">Homeowners</h3>
               <p className="text-sm text-gray-600 mb-4">
-                Post your roofing job openings and connect with qualified professionals in Charlotte.
+                Get an instant roof estimate or browse our directory to find your perfect roofer.
               </p>
-              <Link
-                href="/jobs/post"
-                className="inline-block px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary-light transition text-sm"
-              >
-                Post a Job
-              </Link>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-4">Looking for Work?</h3>
-              <p className="text-sm text-gray-600 mb-4">
-                Create your profile and let Charlotte roofing companies find you.
-              </p>
-              <Link
-                href="/crews/register"
+              <a
+                href="https://instantroofestimate.ai"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-4 py-2 bg-secondary text-white font-medium rounded-lg hover:bg-red-600 transition text-sm"
               >
-                Register Now
-              </Link>
+                Get Free Estimate
+              </a>
             </div>
           </div>
         </div>

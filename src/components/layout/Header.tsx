@@ -2,13 +2,11 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X, Home, Building2, Briefcase, Users, FileText, Phone, ChevronDown } from 'lucide-react'
+import { Menu, X, Home, Building2, FileText, Phone, ChevronDown } from 'lucide-react'
 
 const navigation = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'Companies', href: '/companies', icon: Building2 },
-  { name: 'Jobs', href: '/jobs', icon: Briefcase },
-  { name: 'Find Crews', href: '/crews', icon: Users },
   {
     name: 'Roofing Info',
     icon: FileText,
@@ -95,12 +93,6 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex lg:items-center lg:gap-3">
-            <Link
-              href="/jobs/post"
-              className="px-4 py-2 text-sm font-medium text-primary border border-primary rounded-lg hover:bg-primary hover:text-white transition"
-            >
-              Post a Job
-            </Link>
             <a
               href="https://instantroofestimate.ai"
               target="_blank"
@@ -160,13 +152,6 @@ export default function Header() {
               ))}
             </div>
             <div className="mt-4 pt-4 border-t space-y-2">
-              <Link
-                href="/jobs/post"
-                className="block w-full text-center px-4 py-3 text-sm font-medium text-primary border border-primary rounded-lg"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Post a Job
-              </Link>
               <a
                 href="https://instantroofestimate.ai"
                 target="_blank"

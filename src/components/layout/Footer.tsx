@@ -7,12 +7,6 @@ const footerLinks = {
     { name: 'Featured Roofers', href: '/companies?featured=true' },
     { name: 'Add Your Company', href: '/contact' },
   ],
-  jobs: [
-    { name: 'Job Listings', href: '/jobs' },
-    { name: 'Post a Job', href: '/jobs/post' },
-    { name: 'Find Crews', href: '/crews' },
-    { name: 'Register as Crew', href: '/crews/register' },
-  ],
   resources: [
     { name: 'Residential Roofing', href: '/residential' },
     { name: 'Commercial Roofing', href: '/commercial' },
@@ -54,7 +48,7 @@ export default function Footer() {
 
       {/* Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
@@ -67,7 +61,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-white/80 text-sm mb-4">
-              Your trusted source for finding quality roofing companies, jobs, and crews in Charlotte, NC.
+              Your trusted source for finding quality roofing companies in Charlotte, NC.
             </p>
             <div className="flex items-center gap-2 text-sm text-white/70">
               <MapPin className="w-4 h-4" />
@@ -80,23 +74,6 @@ export default function Footer() {
             <h3 className="font-semibold mb-4 text-accent">Companies</h3>
             <ul className="space-y-2">
               {footerLinks.companies.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/80 hover:text-white transition"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Jobs */}
-          <div>
-            <h3 className="font-semibold mb-4 text-accent">Jobs & Crews</h3>
-            <ul className="space-y-2">
-              {footerLinks.jobs.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}

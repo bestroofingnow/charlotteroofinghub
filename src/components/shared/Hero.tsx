@@ -1,4 +1,4 @@
-import { Search, Building2, Briefcase, Users, ArrowRight } from 'lucide-react'
+import { Search, Building2, Home as HomeIcon, DollarSign, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Hero() {
@@ -20,7 +20,7 @@ export default function Hero() {
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Browse 25+ top-rated roofers with 4.8+ star Google ratings.
-            Find jobs, hire crews, and get instant roof estimates.
+            Compare services, read reviews, and get instant roof estimates.
           </p>
 
           {/* Search Bar */}
@@ -59,29 +59,29 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/jobs"
+              href="/residential"
               className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition"
             >
               <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                <Briefcase className="w-5 h-5" />
+                <HomeIcon className="w-5 h-5" />
               </div>
               <div className="text-left">
-                <span className="block font-semibold">Roofing Jobs</span>
-                <span className="text-sm text-white/70">Now Hiring</span>
+                <span className="block font-semibold">Residential</span>
+                <span className="text-sm text-white/70">Home Roofing</span>
               </div>
               <ArrowRight className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition" />
             </Link>
 
             <Link
-              href="/crews"
+              href="/materials"
               className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition"
             >
               <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                <Users className="w-5 h-5" />
+                <DollarSign className="w-5 h-5" />
               </div>
               <div className="text-left">
-                <span className="block font-semibold">Find Crews</span>
-                <span className="text-sm text-white/70">Sales & Install</span>
+                <span className="block font-semibold">Materials & Pricing</span>
+                <span className="text-sm text-white/70">Cost Guide</span>
               </div>
               <ArrowRight className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition" />
             </Link>
