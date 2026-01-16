@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next'
 import { companies } from '@/data/companies'
+import { neighborhoods } from '@/data/neighborhoods'
+import { services } from '@/data/services'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://charlotteroofinghub.com'
@@ -16,6 +18,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/companies`,
       lastModified: new Date(),
       changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/areas`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
@@ -64,5 +78,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: company.isFeatured ? 0.9 : 0.8,
   }))
 
-  return [...staticPages, ...companyPages]
+  // Dynamic area/neighborhood pages - high priority for hyper-local SEO
+  const areaPages: MetadataRoute.Sitemap = neighborhoods.map((area) => ({
+    url: `${baseUrl}/areas/${area.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: area.featured ? 0.9 : 0.85,
+  }))
+
+  // Dynamic service pages - high priority for service-based SEO
+  const servicePages: MetadataRoute.Sitemap = services.map((service) => ({
+    url: `${baseUrl}/services/${service.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: service.category === 'emergency' ? 0.9 : 0.85,
+  }))
+
+  return [...staticPages, ...companyPages, ...areaPages, ...servicePages]
 }

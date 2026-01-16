@@ -2,21 +2,24 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X, Home, Building2, FileText, Phone, ChevronDown } from 'lucide-react'
+import { Menu, X, Home, Building2, FileText, Phone, ChevronDown, MapPin, Wrench } from 'lucide-react'
 
 const navigation = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'Companies', href: '/companies', icon: Building2 },
+  { name: 'Areas', href: '/areas', icon: MapPin },
+  { name: 'Services', href: '/services', icon: Wrench },
   {
-    name: 'Roofing Info',
+    name: 'Resources',
     icon: FileText,
     children: [
-      { name: 'Residential', href: '/residential' },
-      { name: 'Commercial', href: '/commercial' },
+      { name: 'Residential Roofing', href: '/residential' },
+      { name: 'Commercial Roofing', href: '/commercial' },
       { name: 'Materials & Pricing', href: '/materials' },
+      { name: 'Blog', href: '/blog' },
     ]
   },
-  { name: 'Blog', href: '/blog', icon: FileText },
+  { name: 'About', href: '/about', icon: Building2 },
   { name: 'Contact', href: '/contact', icon: Phone },
 ]
 
