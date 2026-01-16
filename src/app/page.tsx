@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Building2, ArrowRight, Home as HomeIcon, Warehouse, DollarSign, FileText, Star } from 'lucide-react'
+import { Building2, ArrowRight, Home as HomeIcon, Warehouse, DollarSign, FileText, Star, ShieldCheck, UserCheck, Heart } from 'lucide-react'
 import Hero from '@/components/shared/Hero'
 import FeaturedCompany from '@/components/companies/FeaturedCompany'
 import CompanyCard from '@/components/companies/CompanyCard'
@@ -7,27 +7,31 @@ import FAQSection from '@/components/shared/FAQSection'
 import InstantEstimateCTA from '@/components/layout/InstantEstimateCTA'
 import { companies, getFeaturedCompany, getRegularCompanies } from '@/data/companies'
 
-// Homepage FAQs - Voice Search Optimized
+// Homepage FAQs - Voice Search Optimized with Verification Messaging
 const homepageFAQs = [
   {
+    question: "How does Charlotte Roofing Hub verify roofing companies?",
+    answer: "We personally verify every roofing company through a rigorous local process: 1) We meet face-to-face with company owners, 2) We conduct thorough background checks, 3) We verify licensing, insurance, and certifications, 4) We confirm 4.8+ star Google ratings. As a free, non-profit organization, our only goal is protecting Charlotte homeowners from bad contractors."
+  },
+  {
+    question: "Is Charlotte Roofing Hub free to use?",
+    answer: "Yes! Charlotte Roofing Hub is 100% free for homeowners. We are a local non-profit organization dedicated to helping Charlotte residents find trustworthy roofing contractors. We don't charge homeowners anything - our mission is simply to protect our community."
+  },
+  {
     question: "Who is the best roofing company in Charlotte NC?",
-    answer: "Best Roofing Now LLC is Charlotte's featured roofing company, with a perfect 5.0 Google rating and over 125 reviews. However, Charlotte Roofing Hub lists 25+ top-rated roofing companies all with 4.8+ star ratings, so you can find the perfect roofer for your specific needs."
+    answer: "Based on our personal verification and background checks, Best Roofing Now LLC is Charlotte's featured company with a perfect 5.0 Google rating and 125+ reviews. We've met the owners and verified their business. However, all 25+ companies on our site have been personally vetted and have 4.8+ star ratings."
   },
   {
     question: "How much does a new roof cost in Charlotte NC?",
     answer: "The average cost for a new roof in Charlotte ranges from $8,000 to $25,000 for residential homes, depending on size, materials, and complexity. Asphalt shingles cost $3.50-$7.00 per square foot, while metal roofing ranges from $7-$14 per square foot. Get an instant estimate at InstantRoofEstimate.ai for a more accurate price."
   },
   {
-    question: "What roofing materials are best for Charlotte's climate?",
-    answer: "For Charlotte's hot, humid summers and occasional severe storms, architectural shingles are the most popular choice due to their durability and wind resistance. Metal roofing is excellent for heat reflection and longevity. Both materials handle Charlotte's climate well, with proper installation being key."
-  },
-  {
-    question: "How do I choose the right roofing contractor in Charlotte?",
-    answer: "Look for contractors with strong Google ratings (4.8+), proper licensing and insurance, BBB accreditation, and manufacturer certifications like GAF Master Elite or Owens Corning Preferred. Charlotte Roofing Hub only lists verified companies meeting these quality standards."
+    question: "Why should I trust Charlotte Roofing Hub over other directories?",
+    answer: "Unlike other directories that accept paid listings, we're a free non-profit that personally vets every company. We meet owners face-to-face, run background checks, and only list companies with 4.8+ star ratings. We're Charlotte locals protecting our neighbors - not a corporation selling leads."
   },
   {
     question: "How long does a roof replacement take in Charlotte?",
-    answer: "Most residential roof replacements in Charlotte take 1-3 days, depending on the size of your home, weather conditions, and material complexity. Simple asphalt shingle replacements on average-sized homes typically complete in one day. Metal or tile roofing may take 3-5 days."
+    answer: "Most residential roof replacements in Charlotte take 1-3 days, depending on the size of your home, weather conditions, and material complexity. All our verified contractors provide clear timelines upfront. Simple asphalt shingle replacements typically complete in one day."
   }
 ]
 
@@ -71,10 +75,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Top-Rated Roofing Companies in Charlotte
+              Personally Verified Roofing Companies
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              All companies listed have 4.8+ star Google ratings. We feature quality roofers that deserve more visibility.
+              Every company below has been personally verified through owner meetings and background checks. All have 4.8+ star ratings.
             </p>
           </div>
 
@@ -151,43 +155,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Charlotte Roofers */}
+      {/* Why Choose Charlotte Roofing Hub - Verification Focus */}
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Why Choose Charlotte Roofing Hub?
+              Why Trust Charlotte Roofing Hub?
             </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              We&apos;re not like other directories. We&apos;re Charlotte locals who personally verify every company to protect our neighbors.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Star className="w-8 h-8 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center p-6 bg-gray-50 rounded-xl">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <UserCheck className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2">Only 4.8+ Star Companies</h3>
-              <p className="text-gray-600">
-                We only list roofing companies with verified 4.8+ star Google ratings. Quality guaranteed.
+              <h3 className="font-bold text-lg mb-2">Face-to-Face Verified</h3>
+              <p className="text-gray-600 text-sm">
+                We personally meet every roofing company owner. No exceptions. We want to know who we&apos;re recommending to our neighbors.
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Building2 className="w-8 h-8 text-primary" />
+            <div className="text-center p-6 bg-gray-50 rounded-xl">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <ShieldCheck className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2">Discover Hidden Gems</h3>
-              <p className="text-gray-600">
-                We feature quality local roofers who deserve more visibility, not just the big advertisers.
+              <h3 className="font-bold text-lg mb-2">Background Checked</h3>
+              <p className="text-gray-600 text-sm">
+                Every company undergoes thorough background checks. We verify licensing, insurance, and business history before listing.
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <HomeIcon className="w-8 h-8 text-primary" />
+            <div className="text-center p-6 bg-gray-50 rounded-xl">
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Star className="w-8 h-8 text-yellow-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2">Charlotte Focused</h3>
-              <p className="text-gray-600">
-                100% focused on Charlotte and surrounding areas. Local expertise you can trust.
+              <h3 className="font-bold text-lg mb-2">4.8+ Stars Required</h3>
+              <p className="text-gray-600 text-sm">
+                Only companies with verified 4.8+ star Google ratings make our list. We check reviews for authenticity.
+              </p>
+            </div>
+
+            <div className="text-center p-6 bg-gray-50 rounded-xl">
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-8 h-8 text-red-500" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">100% Free Non-Profit</h3>
+              <p className="text-gray-600 text-sm">
+                We&apos;re a non-profit with one mission: help Charlotte homeowners find trustworthy roofers. No paid listings. Ever.
               </p>
             </div>
           </div>

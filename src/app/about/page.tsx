@@ -1,10 +1,16 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Home, Building2, Star, Target, Heart, Shield, ArrowRight, FileText } from 'lucide-react'
+import { Building2, Star, Target, Heart, Shield, ArrowRight, FileText, UserCheck, ShieldCheck, CheckCircle, Users } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'About Charlotte Roofing Hub | Your Trusted Roofing Resource',
-  description: 'Charlotte Roofing Hub is the definitive resource for finding top-rated roofing companies in Charlotte, NC. Learn about our mission.',
+  title: 'About Charlotte Roofing Hub | Free Non-Profit Verified Roofing Directory',
+  description: 'Charlotte Roofing Hub is a free, non-profit roofing directory. We personally meet every company owner and run background checks to protect Charlotte homeowners.',
+  keywords: [
+    'verified roofing companies charlotte',
+    'background checked roofers',
+    'non-profit roofing directory',
+    'trusted roofers charlotte nc'
+  ]
 }
 
 export default function AboutPage() {
@@ -14,12 +20,16 @@ export default function AboutPage() {
       <section className="bg-primary text-white py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+              <Heart className="w-4 h-4 text-red-400" />
+              <span className="text-sm font-medium">Free Non-Profit Organization</span>
+            </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              About Charlotte Roofing Hub
+              Protecting Charlotte Homeowners
             </h1>
             <p className="text-lg md:text-xl text-white/90">
-              Your trusted source for finding quality roofing companies
-              in Charlotte, North Carolina.
+              We personally verify every roofing company through face-to-face meetings
+              and background checks. It&apos;s the only way we&apos;d recommend a roofer to our own neighbors.
             </p>
           </div>
         </div>
@@ -34,29 +44,132 @@ export default function AboutPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Our Mission</h2>
             </div>
             <p className="text-lg text-gray-600 text-center mb-8">
-              Charlotte Roofing Hub was created to help Charlotte homeowners and businesses
-              find quality roofing contractors they can trust. We believe that excellent local
-              roofers deserve visibility - not just the companies with the biggest marketing budgets.
+              Charlotte Roofing Hub was founded with a simple mission: protect our neighbors from
+              bad roofing contractors. We&apos;re Charlotte locals who saw too many homeowners get scammed
+              by fly-by-night roofers, and we decided to do something about it.
+            </p>
+            <p className="text-lg text-gray-600 text-center mb-8">
+              <strong>We are 100% free and non-profit.</strong> We don&apos;t charge homeowners anything,
+              and we don&apos;t accept paid listings. Our only goal is helping you find a roofer you can trust.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-gray-50 rounded-xl p-6">
-                <Heart className="w-8 h-8 text-secondary mb-4" />
-                <h3 className="font-bold text-gray-900 mb-2">Supporting Local Roofers</h3>
+                <Heart className="w-8 h-8 text-red-500 mb-4" />
+                <h3 className="font-bold text-gray-900 mb-2">Non-Profit, Community First</h3>
                 <p className="text-gray-600 text-sm">
-                  We spotlight quality local roofing companies that might not have huge marketing
-                  budgets but deliver exceptional work. If you have a 4.8+ star rating, you belong here.
+                  We&apos;re not a corporation selling leads. We&apos;re Charlotte neighbors who want to help
+                  our community find honest, quality roofers. No hidden agendas.
                 </p>
               </div>
 
               <div className="bg-gray-50 rounded-xl p-6">
                 <Shield className="w-8 h-8 text-primary mb-4" />
-                <h3 className="font-bold text-gray-900 mb-2">Quality Standards</h3>
+                <h3 className="font-bold text-gray-900 mb-2">No Paid Listings. Ever.</h3>
                 <p className="text-gray-600 text-sm">
-                  Every company listed on our platform must have a 4.8+ star Google rating.
-                  We verify ratings and only feature contractors we'd trust with our own roofs.
+                  Companies can&apos;t buy their way onto our list. Every company earns their spot through
+                  our verification process and their reputation. Period.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Verification Process */}
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Our Verification Process
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Before any company appears on our site, they must pass our rigorous verification.
+              We take this seriously because we&apos;re recommending these roofers to our own neighbors.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-green-600">1</span>
+              </div>
+              <UserCheck className="w-8 h-8 text-green-600 mx-auto mb-3" />
+              <h3 className="font-bold text-gray-900 mb-2">Face-to-Face Meeting</h3>
+              <p className="text-sm text-gray-600">
+                We personally meet with every company owner. We want to look them in the eye
+                and understand how they run their business.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-blue-600">2</span>
+              </div>
+              <ShieldCheck className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+              <h3 className="font-bold text-gray-900 mb-2">Background Check</h3>
+              <p className="text-sm text-gray-600">
+                We run thorough background checks on the company and principals. We verify
+                there&apos;s no history of fraud, lawsuits, or complaints.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
+              <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-yellow-600">3</span>
+              </div>
+              <FileText className="w-8 h-8 text-yellow-600 mx-auto mb-3" />
+              <h3 className="font-bold text-gray-900 mb-2">License & Insurance</h3>
+              <p className="text-sm text-gray-600">
+                We verify current licensing, proper insurance coverage, and any manufacturer
+                certifications (GAF, Owens Corning, etc.).
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
+              <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-amber-600">4</span>
+              </div>
+              <Star className="w-8 h-8 text-amber-500 mx-auto mb-3" />
+              <h3 className="font-bold text-gray-900 mb-2">4.8+ Star Rating</h3>
+              <p className="text-sm text-gray-600">
+                Companies must have a verified 4.8+ star Google rating. We also check
+                that reviews are authentic, not fake or bought.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10 text-center">
+            <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 rounded-full px-6 py-3">
+              <CheckCircle className="w-5 h-5" />
+              <span className="font-semibold">25+ companies have passed our verification</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why We Do This */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-6">
+              Why We Do This
+            </h2>
+            <div className="bg-gray-50 rounded-xl p-8">
+              <p className="text-gray-700 mb-4">
+                We started Charlotte Roofing Hub after seeing too many of our friends and neighbors
+                get burned by bad roofing contractors. Storm chasers who disappear after cashing the check.
+                Unlicensed &ldquo;roofers&rdquo; who leave leaky roofs behind. Companies with fake reviews
+                and hidden complaints.
+              </p>
+              <p className="text-gray-700 mb-4">
+                We realized that while there are plenty of directories out there, none of them actually
+                verify the companies they list. They just take money and post whoever pays.
+              </p>
+              <p className="text-gray-700 font-semibold">
+                We wanted something different. A directory we&apos;d actually trust to recommend a roofer
+                to our own family. So we built it ourselves - and we&apos;re keeping it free forever.
+              </p>
             </div>
           </div>
         </div>
@@ -66,16 +179,16 @@ export default function AboutPage() {
       <section className="py-12 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-10">
-            What We Offer
+            What We Offer (All Free)
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white rounded-xl p-6 text-center shadow-sm">
               <Building2 className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">Company Directory</h3>
+              <h3 className="font-bold text-gray-900 mb-2">Verified Company Directory</h3>
               <p className="text-sm text-gray-600">
-                25+ handpicked roofing companies with verified 4.8+ star ratings serving Charlotte
-                and surrounding areas.
+                25+ personally verified roofing companies with background checks, all with
+                4.8+ star ratings serving Charlotte and surrounding areas.
               </p>
             </div>
 
@@ -89,11 +202,11 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <Star className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="font-bold text-gray-900 mb-2">Expert Content</h3>
+              <Users className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 className="font-bold text-gray-900 mb-2">Community Protection</h3>
               <p className="text-sm text-gray-600">
-                Comprehensive information on roofing materials, costs, and what to expect when
-                hiring a roofer in Charlotte.
+                If you have a bad experience with a listed company, tell us. We&apos;ll investigate
+                and remove any company that doesn&apos;t meet our standards.
               </p>
             </div>
           </div>
@@ -108,6 +221,10 @@ export default function AboutPage() {
               Our Featured Partner
             </h2>
             <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-8">
+              <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 rounded-full px-4 py-2 mb-4">
+                <CheckCircle className="w-4 h-4" />
+                <span className="text-sm font-medium">Personally Verified & Background Checked</span>
+              </div>
               <div className="w-20 h-20 bg-primary rounded-xl flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4">
                 B
               </div>
@@ -121,9 +238,8 @@ export default function AboutPage() {
                 <span className="text-gray-700 font-semibold ml-1">5.0</span>
               </div>
               <p className="text-gray-600 mb-6">
-                Charlotte&apos;s premier roofing contractor, known for exceptional quality,
-                customer service, and competitive pricing. Serving residential and commercial
-                customers across the Charlotte metro area.
+                Veteran-owned, family-operated roofing company. We&apos;ve met the owners personally
+                and verified their exceptional track record with Charlotte homeowners.
               </p>
               <a
                 href="https://bestroofingnow.com"
@@ -150,20 +266,22 @@ export default function AboutPage() {
             <div className="bg-white rounded-xl p-6 text-center shadow-sm">
               <h3 className="font-bold text-gray-900 mb-4">Roofing Companies</h3>
               <p className="text-sm text-gray-600 mb-4">
-                Have a 4.8+ star rating? Get listed on Charlotte Roofing Hub and reach more customers.
+                Want to be listed? We&apos;ll need to meet in person, verify your background,
+                and confirm your 4.8+ star rating. Contact us to start the process.
               </p>
               <Link
                 href="/contact"
                 className="inline-block px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary-light transition text-sm"
               >
-                Request Listing
+                Request Verification
               </Link>
             </div>
 
             <div className="bg-white rounded-xl p-6 text-center shadow-sm">
               <h3 className="font-bold text-gray-900 mb-4">Homeowners</h3>
               <p className="text-sm text-gray-600 mb-4">
-                Get an instant roof estimate or browse our directory to find your perfect roofer.
+                Get an instant roof estimate or browse our verified directory to find
+                a roofer you can trust with your home.
               </p>
               <a
                 href="https://instantroofestimate.ai"
@@ -185,7 +303,8 @@ export default function AboutPage() {
             Have Questions?
           </h2>
           <p className="text-white/90 mb-8">
-            We&apos;d love to hear from you. Reach out with questions, suggestions, or partnership inquiries.
+            We&apos;re real Charlotte locals and we&apos;d love to hear from you.
+            Questions, feedback, or want to report an issue with a listed company? Get in touch.
           </p>
           <Link
             href="/contact"

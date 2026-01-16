@@ -1,4 +1,4 @@
-import { Search, Building2, Home as HomeIcon, DollarSign, ArrowRight } from 'lucide-react'
+import { Search, Building2, Home as HomeIcon, DollarSign, ArrowRight, ShieldCheck, UserCheck, Heart } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Hero() {
@@ -8,20 +8,36 @@ export default function Hero() {
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-            <span className="text-sm font-medium">Charlotte&apos;s #1 Roofing Resource</span>
+            <ShieldCheck className="w-4 h-4 text-green-400" />
+            <span className="text-sm font-medium">Free Non-Profit | Every Company Personally Verified</span>
           </div>
 
           {/* Main Headline - Voice Search Optimized */}
           <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-            Find the Best Roofing Companies in Charlotte, NC
+            Charlotte&apos;s Only <span className="text-accent">Locally-Verified</span> Roofing Directory
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Browse 25+ top-rated roofers with 4.8+ star Google ratings.
-            Compare services, read reviews, and get instant roof estimates.
+          {/* Subheadline - Trust Messaging */}
+          <p className="hero-description text-lg md:text-xl text-white/90 mb-6 max-w-2xl mx-auto" data-speakable="true">
+            We personally meet every roofing company owner and run background checks.
+            A free, non-profit resource protecting Charlotte homeowners since 2024.
           </p>
+
+          {/* Trust Badges */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+              <UserCheck className="w-4 h-4 text-green-400" />
+              <span className="text-sm">Face-to-Face Verified</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+              <ShieldCheck className="w-4 h-4 text-green-400" />
+              <span className="text-sm">Background Checked</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+              <Heart className="w-4 h-4 text-green-400" />
+              <span className="text-sm">100% Free Non-Profit</span>
+            </div>
+          </div>
 
           {/* Search Bar */}
           <div className="max-w-xl mx-auto mb-10">

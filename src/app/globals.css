@@ -116,3 +116,198 @@ button, a, input, select, textarea {
   opacity: 1;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+/* ==========================================
+   MOBILE OPTIMIZATION - High Performance
+   ========================================== */
+
+/* Prevent horizontal overflow on mobile */
+html, body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optimized font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Mobile tap highlight removal for cleaner UX */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Faster touch response */
+a, button, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Safe area padding for notched devices */
+@supports (padding: max(0px)) {
+  .safe-area-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .safe-area-top {
+    padding-top: max(0px, env(safe-area-inset-top));
+  }
+}
+
+/* ==========================================
+   CONVERSION OPTIMIZATION STYLES
+   ========================================== */
+
+/* Urgency pulse for CTAs */
+@keyframes urgency-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 14px 0 rgba(230, 57, 70, 0.39);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px 0 rgba(230, 57, 70, 0.5);
+  }
+}
+
+.cta-urgency {
+  animation: urgency-pulse 2s ease-in-out infinite;
+}
+
+/* Floating CTA entrance animation */
+@keyframes float-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.float-up {
+  animation: float-up 0.5s ease-out forwards;
+}
+
+/* Trust badge shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.trust-shimmer {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,0.2) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Phone number highlight for click-to-call */
+a[href^="tel:"] {
+  font-weight: 600;
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a[href^="tel:"]:hover {
+  color: #c41e30;
+  text-decoration: underline;
+}
+
+/* ==========================================
+   RESPONSIVE TYPOGRAPHY - Mobile First
+   ========================================== */
+
+/* Fluid typography for better mobile readability */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+
+  /* Larger touch targets on mobile */
+  button, a, input, select, textarea {
+    min-height: 48px;
+  }
+
+  /* Better spacing for mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* ==========================================
+   PERFORMANCE OPTIMIZATIONS
+   ========================================== */
+
+/* GPU acceleration for animations */
+.card-hover, .cta-pulse, .cta-urgency {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Dark mode support (for future) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1a2e;
+    --foreground: #ffffff;
+  }
+}
+
+/* Print styles for better conversion tracking */
+@media print {
+  .no-print, nav, footer, .fixed {
+    display: none !important;
+  }
+
+  a[href^="tel:"]::after {
+    content: " (" attr(href) ")";
+  }
+}
+
+/* ==========================================
+   SEO/AEO Optimized Content Styles
+   ========================================== */
+
+/* Highlight key information for AI/voice assistants */
+.hero-description,
+.faq-answer,
+[data-speakable="true"] {
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+/* Structured content sections */
+.service-area,
+.company-info,
+.pricing-info {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: rgba(30, 58, 95, 0.03);
+}
