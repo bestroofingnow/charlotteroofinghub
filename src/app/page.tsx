@@ -1,11 +1,13 @@
 import Link from 'next/link'
-import { Building2, ArrowRight, Home as HomeIcon, Warehouse, DollarSign, FileText, Star, ShieldCheck, UserCheck, Heart } from 'lucide-react'
+import { Building2, ArrowRight, Home as HomeIcon, Warehouse, DollarSign, FileText, Star, ShieldCheck, UserCheck, Heart, MapPin, Wrench, AlertTriangle, CloudLightning } from 'lucide-react'
 import Hero from '@/components/shared/Hero'
 import FeaturedCompany from '@/components/companies/FeaturedCompany'
 import CompanyCard from '@/components/companies/CompanyCard'
 import FAQSection from '@/components/shared/FAQSection'
 import InstantEstimateCTA from '@/components/layout/InstantEstimateCTA'
 import { companies, getFeaturedCompany, getRegularCompanies } from '@/data/companies'
+import { getFeaturedServices } from '@/data/services'
+import { getFeaturedNeighborhoods } from '@/data/neighborhoods'
 
 // Homepage FAQs - Voice Search Optimized with Verification Messaging
 const homepageFAQs = [
@@ -46,6 +48,8 @@ const stats = [
 export default function HomePage() {
   const featuredCompany = getFeaturedCompany()
   const topCompanies = getRegularCompanies().slice(0, 6)
+  const featuredServices = getFeaturedServices().slice(0, 4)
+  const featuredAreas = getFeaturedNeighborhoods().slice(0, 6)
 
   return (
     <>
@@ -107,12 +111,104 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Overview */}
+      {/* Popular Services Section */}
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Roofing Services in Charlotte NC
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              From emergency repairs to complete replacements, our verified contractors handle every roofing need.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link href="/services/roof-replacement" className="group p-6 bg-white rounded-xl hover:shadow-lg transition">
+              <HomeIcon className="w-10 h-10 text-primary mb-4" />
+              <h3 className="font-bold text-lg mb-2 group-hover:text-primary">Roof Replacement</h3>
+              <p className="text-gray-600 text-sm mb-2">Complete roof replacement services</p>
+              <span className="text-sm text-gray-500">$8,000 - $25,000</span>
+            </Link>
+
+            <Link href="/services/roof-repair" className="group p-6 bg-white rounded-xl hover:shadow-lg transition">
+              <Wrench className="w-10 h-10 text-primary mb-4" />
+              <h3 className="font-bold text-lg mb-2 group-hover:text-primary">Roof Repair</h3>
+              <p className="text-gray-600 text-sm mb-2">Fix leaks and storm damage</p>
+              <span className="text-sm text-gray-500">$300 - $2,500</span>
+            </Link>
+
+            <Link href="/services/emergency-roof-repair" className="group p-6 bg-red-50 rounded-xl hover:shadow-lg transition border-2 border-red-200">
+              <AlertTriangle className="w-10 h-10 text-red-600 mb-4" />
+              <h3 className="font-bold text-lg mb-2 text-red-700 group-hover:text-red-800">Emergency Repair</h3>
+              <p className="text-gray-600 text-sm mb-2">24/7 emergency response</p>
+              <span className="text-sm text-red-600 font-semibold">Available Now</span>
+            </Link>
+
+            <Link href="/services/storm-damage-repair" className="group p-6 bg-white rounded-xl hover:shadow-lg transition">
+              <CloudLightning className="w-10 h-10 text-primary mb-4" />
+              <h3 className="font-bold text-lg mb-2 group-hover:text-primary">Storm Damage</h3>
+              <p className="text-gray-600 text-sm mb-2">Hail, wind & storm repair</p>
+              <span className="text-sm text-gray-500">Insurance Claims Help</span>
+            </Link>
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary-light transition"
+            >
+              View All Roofing Services
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas Section */}
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Everything Roofing in Charlotte
+              Charlotte Neighborhoods We Serve
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Our verified contractors serve 40+ neighborhoods in the Charlotte metro area.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {featuredAreas.map((area) => (
+              <Link
+                key={area.slug}
+                href={`/areas/${area.slug}`}
+                className="group p-4 bg-gray-50 rounded-xl hover:bg-primary hover:text-white transition text-center"
+              >
+                <MapPin className="w-6 h-6 text-primary group-hover:text-white mx-auto mb-2" />
+                <h3 className="font-semibold text-sm group-hover:text-white">{area.name}</h3>
+                <p className="text-xs text-gray-500 group-hover:text-white/70 mt-1">ZIP: {area.zipCodes[0]}</p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/areas"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary-light transition"
+            >
+              View All 40+ Service Areas
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Resources Overview */}
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Roofing Resources & Guides
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Your complete resource for residential and commercial roofing information
@@ -120,7 +216,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Link href="/residential" className="group p-6 bg-gray-50 rounded-xl hover:bg-primary hover:text-white transition">
+            <Link href="/residential" className="group p-6 bg-white rounded-xl hover:bg-primary hover:text-white transition">
               <HomeIcon className="w-10 h-10 text-primary group-hover:text-white mb-4" />
               <h3 className="font-bold text-lg mb-2 group-hover:text-white">Residential Roofing</h3>
               <p className="text-gray-600 group-hover:text-white/80 text-sm">
@@ -128,7 +224,7 @@ export default function HomePage() {
               </p>
             </Link>
 
-            <Link href="/commercial" className="group p-6 bg-gray-50 rounded-xl hover:bg-primary hover:text-white transition">
+            <Link href="/commercial" className="group p-6 bg-white rounded-xl hover:bg-primary hover:text-white transition">
               <Warehouse className="w-10 h-10 text-primary group-hover:text-white mb-4" />
               <h3 className="font-bold text-lg mb-2 group-hover:text-white">Commercial Roofing</h3>
               <p className="text-gray-600 group-hover:text-white/80 text-sm">
@@ -136,7 +232,7 @@ export default function HomePage() {
               </p>
             </Link>
 
-            <Link href="/materials" className="group p-6 bg-gray-50 rounded-xl hover:bg-primary hover:text-white transition">
+            <Link href="/materials" className="group p-6 bg-white rounded-xl hover:bg-primary hover:text-white transition">
               <DollarSign className="w-10 h-10 text-primary group-hover:text-white mb-4" />
               <h3 className="font-bold text-lg mb-2 group-hover:text-white">Materials & Pricing</h3>
               <p className="text-gray-600 group-hover:text-white/80 text-sm">
@@ -144,7 +240,7 @@ export default function HomePage() {
               </p>
             </Link>
 
-            <Link href="/blog" className="group p-6 bg-gray-50 rounded-xl hover:bg-primary hover:text-white transition">
+            <Link href="/blog" className="group p-6 bg-white rounded-xl hover:bg-primary hover:text-white transition">
               <FileText className="w-10 h-10 text-primary group-hover:text-white mb-4" />
               <h3 className="font-bold text-lg mb-2 group-hover:text-white">Roofing Blog</h3>
               <p className="text-gray-600 group-hover:text-white/80 text-sm">

@@ -39,15 +39,15 @@ const commercialFAQs = [
   }
 ]
 
-const commercialServices = [
-  { name: 'TPO Roofing', desc: 'Energy-efficient single-ply membrane roofing' },
-  { name: 'EPDM Systems', desc: 'Durable rubber roofing for flat commercial roofs' },
-  { name: 'PVC Roofing', desc: 'Chemical-resistant membrane for restaurants & industrial' },
-  { name: 'Modified Bitumen', desc: 'Multi-layer asphalt roofing systems' },
-  { name: 'Metal Roofing', desc: 'Standing seam and commercial metal systems' },
-  { name: 'Roof Coatings', desc: 'Extend roof life with reflective coatings' },
-  { name: 'Flat Roof Repair', desc: 'Leak detection and repair services' },
-  { name: 'Preventive Maintenance', desc: 'Scheduled inspections and upkeep programs' }
+const commercialServicesList = [
+  { name: 'Flat Roofing', desc: 'TPO, EPDM, and PVC membrane systems', href: '/services/flat-roofing' },
+  { name: 'Commercial Roofing', desc: 'Full commercial roofing solutions', href: '/services/commercial-roofing' },
+  { name: 'Metal Roofing', desc: 'Standing seam and commercial metal systems', href: '/services/metal-roofing' },
+  { name: 'Roof Repair', desc: 'Commercial leak detection and repair', href: '/services/roof-repair' },
+  { name: 'Emergency Repair', desc: '24/7 emergency commercial roofing', href: '/services/emergency-roof-repair' },
+  { name: 'Storm Damage', desc: 'Commercial storm damage restoration', href: '/services/storm-damage-repair' },
+  { name: 'Roof Inspection', desc: 'Commercial roof assessment and reporting', href: '/services/roof-inspection' },
+  { name: 'Roof Maintenance', desc: 'Scheduled inspections and upkeep programs', href: '/services/roof-maintenance' }
 ]
 
 export default function CommercialPage() {
@@ -130,13 +130,30 @@ export default function CommercialPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {commercialServices.map((service) => (
-              <div key={service.name} className="bg-white p-6 rounded-xl shadow-sm">
+            {commercialServicesList.map((service) => (
+              <Link
+                key={service.name}
+                href={service.href}
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition group"
+              >
                 <CheckCircle className="w-8 h-8 text-primary mb-3" />
-                <h3 className="font-bold text-gray-900 mb-2">{service.name}</h3>
+                <h3 className="font-bold text-gray-900 mb-2 group-hover:text-primary">{service.name}</h3>
                 <p className="text-sm text-gray-600">{service.desc}</p>
-              </div>
+                <span className="text-sm text-primary font-medium mt-3 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition">
+                  Learn More <ArrowRight className="w-3 h-3" />
+                </span>
+              </Link>
             ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+            >
+              View All Roofing Services
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

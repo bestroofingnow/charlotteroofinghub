@@ -39,15 +39,15 @@ const residentialFAQs = [
   }
 ]
 
-const services = [
-  { name: 'Complete Roof Replacement', desc: 'Full tear-off and installation of new roofing system' },
-  { name: 'Roof Repairs', desc: 'Fix leaks, replace damaged shingles, seal flashings' },
-  { name: 'Storm Damage Repair', desc: 'Hail, wind, and fallen tree damage restoration' },
-  { name: 'Roof Inspections', desc: 'Comprehensive assessment of roof condition' },
-  { name: 'Gutter Installation', desc: 'Seamless gutters and downspout systems' },
-  { name: 'Attic Ventilation', desc: 'Ridge vents, soffit vents, and exhaust fans' },
-  { name: 'Skylight Installation', desc: 'Add natural light with properly sealed skylights' },
-  { name: 'Emergency Repairs', desc: '24/7 emergency tarping and leak repairs' }
+const residentialServices = [
+  { name: 'Complete Roof Replacement', desc: 'Full tear-off and installation of new roofing system', href: '/services/roof-replacement' },
+  { name: 'Roof Repairs', desc: 'Fix leaks, replace damaged shingles, seal flashings', href: '/services/roof-repair' },
+  { name: 'Storm Damage Repair', desc: 'Hail, wind, and fallen tree damage restoration', href: '/services/storm-damage-repair' },
+  { name: 'Roof Inspections', desc: 'Comprehensive assessment of roof condition', href: '/services/roof-inspection' },
+  { name: 'Gutter Installation', desc: 'Seamless gutters and downspout systems', href: '/services/gutter-installation' },
+  { name: 'Shingle Roofing', desc: 'Architectural and 3-tab shingle installation', href: '/services/shingle-roofing' },
+  { name: 'Skylight Installation', desc: 'Add natural light with properly sealed skylights', href: '/services/skylight-installation' },
+  { name: 'Emergency Repairs', desc: '24/7 emergency tarping and leak repairs', href: '/services/emergency-roof-repair' }
 ]
 
 export default function ResidentialPage() {
@@ -130,13 +130,30 @@ export default function ResidentialPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service) => (
-              <div key={service.name} className="bg-white p-6 rounded-xl shadow-sm">
+            {residentialServices.map((service) => (
+              <Link
+                key={service.name}
+                href={service.href}
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition group"
+              >
                 <CheckCircle className="w-8 h-8 text-primary mb-3" />
-                <h3 className="font-bold text-gray-900 mb-2">{service.name}</h3>
+                <h3 className="font-bold text-gray-900 mb-2 group-hover:text-primary">{service.name}</h3>
                 <p className="text-sm text-gray-600">{service.desc}</p>
-              </div>
+                <span className="text-sm text-primary font-medium mt-3 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition">
+                  Learn More <ArrowRight className="w-3 h-3" />
+                </span>
+              </Link>
             ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+            >
+              View All Roofing Services
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

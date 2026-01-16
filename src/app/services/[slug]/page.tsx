@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Phone, Star, ArrowRight, ShieldCheck, CheckCircle, Clock, DollarSign, AlertTriangle } from 'lucide-react'
+import { Phone, Star, ArrowRight, ShieldCheck, CheckCircle, Clock, DollarSign, AlertTriangle, MapPin } from 'lucide-react'
 import { services, getServiceBySlug } from '@/data/services'
 import { companies } from '@/data/companies'
+import { getFeaturedNeighborhoods } from '@/data/neighborhoods'
 import FAQSection from '@/components/shared/FAQSection'
 
 interface Props {
@@ -41,6 +42,9 @@ export default async function ServicePage({ params }: Props) {
 
   // Get companies that offer this service (for now, show top 6)
   const serviceCompanies = companies.slice(0, 6)
+
+  // Get featured areas for this service
+  const featuredAreas = getFeaturedNeighborhoods().slice(0, 6)
 
   const categoryColors = {
     residential: 'bg-blue-100 text-blue-800',
@@ -224,8 +228,43 @@ export default async function ServicePage({ params }: Props) {
         />
       </section>
 
-      {/* Related Services */}
+      {/* Service Areas */}
       <section className="py-12 md:py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            {service.name} in Charlotte Neighborhoods
+          </h2>
+          <p className="text-gray-600 mb-8 max-w-2xl">
+            Our verified contractors provide {service.name.toLowerCase()} services throughout the Charlotte metro area.
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {featuredAreas.map((area) => (
+              <Link
+                key={area.slug}
+                href={`/areas/${area.slug}`}
+                className="group p-4 bg-white rounded-lg hover:bg-primary hover:text-white transition text-center"
+              >
+                <MapPin className="w-5 h-5 text-primary group-hover:text-white mx-auto mb-2" />
+                <h3 className="font-semibold text-sm group-hover:text-white">{area.name}</h3>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              href="/areas"
+              className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+            >
+              View All 40+ Service Areas
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
             Related Services
@@ -239,7 +278,7 @@ export default async function ServicePage({ params }: Props) {
                 <Link
                   key={relatedService.slug}
                   href={`/services/${relatedService.slug}`}
-                  className="bg-white rounded-xl p-6 hover:shadow-lg transition group"
+                  className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition group"
                 >
                   <h3 className="font-bold text-lg text-gray-900 group-hover:text-primary mb-2">
                     {relatedService.name}

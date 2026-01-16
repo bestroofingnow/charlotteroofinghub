@@ -10,16 +10,17 @@ import {
 } from '@/data/neighborhoods'
 
 export const metadata: Metadata = {
-  title: 'Service Areas | Roofing in Charlotte Neighborhoods & Communities',
-  description: 'Find verified roofing contractors in your Charlotte neighborhood. We serve Ballantyne, South End, Myers Park, Huntersville, Matthews, and 40+ Charlotte communities.',
+  title: 'Charlotte NC Roofing Service Areas | 40+ Neighborhoods & Cities',
+  description: 'Find verified roofing contractors in your Charlotte NC neighborhood. We serve Ballantyne, South End, Myers Park, Huntersville, Matthews, and 40+ Charlotte communities.',
   keywords: [
+    'charlotte nc roofing service areas',
     'charlotte neighborhoods roofing',
-    'roofing near me charlotte',
-    'local roofers ballantyne',
-    'myers park roofing',
-    'south end roofers',
-    'huntersville roofing',
-    'matthews roofing contractors'
+    'roofing near me charlotte nc',
+    'local roofers ballantyne charlotte',
+    'myers park charlotte roofing',
+    'south end charlotte roofers',
+    'huntersville nc roofing',
+    'matthews nc roofing contractors'
   ]
 }
 

@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { MapPin, Phone, Star, ArrowRight, ShieldCheck, UserCheck, Home, Building2, CheckCircle } from 'lucide-react'
+import { MapPin, Phone, Star, ArrowRight, ShieldCheck, UserCheck, Home, Building2, CheckCircle, Wrench } from 'lucide-react'
 import { neighborhoods, getNeighborhoodBySlug } from '@/data/neighborhoods'
 import { companies } from '@/data/companies'
+import { services } from '@/data/services'
 import FAQSection from '@/components/shared/FAQSection'
 
 interface Props {
@@ -24,17 +25,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: 'Area Not Found' }
   }
 
-  const typeLabel = area.type === 'business-park' ? 'Commercial Roofing' : 'Roofing'
+  // Determine the right title format based on area type
+  const isCharlotteNeighborhood = area.type === 'neighborhood'
+  const isBusinessPark = area.type === 'business-park'
+  const isSurroundingCity = area.type === 'city'
+
+  let title: string
+  if (isBusinessPark) {
+    title = `Commercial Roofing Contractors in ${area.name} Charlotte NC`
+  } else if (isCharlotteNeighborhood) {
+    title = `Roofing Contractors in ${area.name} Charlotte NC`
+  } else if (isSurroundingCity) {
+    title = `Roofing Contractors in ${area.name} NC`
+  } else {
+    title = `Roofing Contractors in ${area.name} Charlotte NC`
+  }
 
   return {
-    title: `${typeLabel} in ${area.name} | Charlotte Roofing Hub`,
-    description: `Find verified roofing contractors in ${area.name}. Background-checked local roofers serving ZIP codes ${area.zipCodes.join(', ')}. Free estimates, 4.8+ star ratings.`,
+    title: `${title} | Charlotte Roofing Hub`,
+    description: `Find verified roofing contractors in ${area.name}${isCharlotteNeighborhood ? ', Charlotte NC' : ''}. Background-checked local roofers serving ZIP codes ${area.zipCodes.join(', ')}. Free estimates, 4.8+ star ratings.`,
     keywords: [
       `roofing ${area.name.toLowerCase()}`,
       `roofers ${area.name.toLowerCase()}`,
       `roof repair ${area.name.toLowerCase()}`,
       `roofing contractors ${area.zipCodes[0]}`,
-      `best roofers ${area.name.toLowerCase()} nc`
+      `best roofers ${area.name.toLowerCase()} nc`,
+      `roof replacement ${area.name.toLowerCase()}`,
+      isCharlotteNeighborhood ? `${area.name.toLowerCase()} charlotte roofing` : `${area.name.toLowerCase()} roofing companies`
     ]
   }
 }
@@ -185,6 +202,39 @@ export default async function AreaPage({ params }: Props) {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Available in This Area */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+            Roofing Services in {area.name}
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {services.slice(0, 8).map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group p-4 bg-gray-50 rounded-lg hover:bg-primary hover:text-white transition"
+              >
+                <Wrench className="w-6 h-6 text-primary group-hover:text-white mb-2" />
+                <h3 className="font-semibold text-sm group-hover:text-white">{service.name}</h3>
+                <p className="text-xs text-gray-500 group-hover:text-white/70 mt-1">{service.priceRange}</p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+            >
+              View All Roofing Services
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
