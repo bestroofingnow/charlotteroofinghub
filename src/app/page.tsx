@@ -21,7 +21,7 @@ const homepageFAQs = [
   },
   {
     question: "Who is the best roofing company in Charlotte NC?",
-    answer: "Based on our personal verification and background checks, Best Roofing Now LLC is Charlotte's featured company with a perfect 5.0 Google rating and 125+ reviews. We've met the owners and verified their business. However, all 25+ companies on our site have been personally vetted and have 4.8+ star ratings."
+    answer: "Based on our personal verification and background checks, Charlotte has many excellent roofing companies with 4.8+ star ratings. All 25+ companies on our site have been personally vetted - we meet owners face-to-face and run background checks. Browse our directory to find the perfect match for your specific roofing needs."
   },
   {
     question: "How much does a new roof cost in Charlotte NC?",

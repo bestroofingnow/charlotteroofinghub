@@ -177,15 +177,7 @@ export default function Footer() {
               &copy; {currentYear} Charlotte Roofing Hub. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
-              <span className="text-sm text-white/70">Powered by</span>
-              <a
-                href="https://bestroofingnow.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-semibold text-accent hover:text-white transition"
-              >
-                Best Roofing Now LLC
-              </a>
+              <span className="text-sm text-white/70">A free community resource for Charlotte homeowners</span>
             </div>
           </div>
         </div>

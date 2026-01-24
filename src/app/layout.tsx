@@ -187,9 +187,8 @@ function LocalBusinessAggregateSchema() {
         position: 1,
         item: {
           "@type": "RoofingContractor",
-          name: "Best Roofing Now LLC",
-          description: "Featured roofing contractor serving Charlotte, NC",
-          url: "https://bestroofingnow.com"
+          name: "Verified Charlotte Roofing Contractors",
+          description: "25+ personally vetted roofing contractors serving Charlotte, NC"
         }
       }
     ]
@@ -284,7 +283,7 @@ function GlobalFAQSchema() {
         name: "What is the best roofing company in Charlotte NC?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Based on our personal verification and background checks, top-rated Charlotte roofers include Best Roofing Now LLC (5.0 stars, veteran-owned), Horizon Roofing & Restoration (5.0 stars, 20+ years experience), Charlotte's Best Roofing (5.0 stars, 200+ reviews), and Signature Exteriors (4.9 stars, 1700+ reviews). All have been personally vetted by our local team."
+          text: "Based on our personal verification and background checks, Charlotte has many excellent roofing companies. All 25+ companies listed on Charlotte Roofing Hub have been personally vetted - we meet owners face-to-face, run background checks, and only list companies with 4.8+ star Google ratings. Browse our directory to compare verified contractors."
         }
       },
       {
@@ -354,7 +353,7 @@ function SpeakableSchema() {
       itemListElement: {
         "@type": "ListItem",
         position: 1,
-        name: "Best Roofing Now LLC - 5.0 stars, veteran-owned, BBB A+ rated"
+        name: "25+ Verified Charlotte Roofing Contractors - All 4.8+ Stars"
       }
     }
   };

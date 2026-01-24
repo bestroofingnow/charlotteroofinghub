@@ -213,22 +213,28 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Featured Partner */}
+      {/* Featured Partners */}
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              Our Featured Partner
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Our Featured Partners
             </h2>
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-8">
-              <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 rounded-full px-4 py-2 mb-4">
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              These companies have been personally verified and support Charlotte Roofing Hub&apos;s mission to protect homeowners.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Residential Featured Partner */}
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-8 text-center">
+              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 rounded-full px-4 py-2 mb-4">
                 <CheckCircle className="w-4 h-4" />
-                <span className="text-sm font-medium">Personally Verified & Background Checked</span>
+                <span className="text-sm font-medium">Featured Residential Roofer</span>
               </div>
               <div className="w-20 h-20 bg-primary rounded-xl flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4">
-                B
+                R
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Best Roofing Now LLC</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Rise Roofing and Construction</h3>
               <div className="flex items-center justify-center gap-2 text-amber-500 mb-4">
                 <Star className="w-5 h-5 fill-current" />
                 <Star className="w-5 h-5 fill-current" />
@@ -238,16 +244,43 @@ export default function AboutPage() {
                 <span className="text-gray-700 font-semibold ml-1">5.0</span>
               </div>
               <p className="text-gray-600 mb-6">
-                Veteran-owned, family-operated roofing company. We&apos;ve met the owners personally
-                and verified their exceptional track record with Charlotte homeowners.
+                Trusted residential roofing experts serving Charlotte homeowners with quality craftsmanship and exceptional service.
               </p>
               <a
-                href="https://bestroofingnow.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/companies"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-light transition"
               >
-                Visit Website
+                View Profile
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            {/* Commercial Featured Partner */}
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 text-center">
+              <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 rounded-full px-4 py-2 mb-4">
+                <CheckCircle className="w-4 h-4" />
+                <span className="text-sm font-medium">Featured Commercial Partner</span>
+              </div>
+              <div className="w-20 h-20 bg-secondary rounded-xl flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4">
+                W
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">We Coat</h3>
+              <div className="flex items-center justify-center gap-2 text-amber-500 mb-4">
+                <Star className="w-5 h-5 fill-current" />
+                <Star className="w-5 h-5 fill-current" />
+                <Star className="w-5 h-5 fill-current" />
+                <Star className="w-5 h-5 fill-current" />
+                <Star className="w-5 h-5 fill-current" />
+                <span className="text-gray-700 font-semibold ml-1">5.0</span>
+              </div>
+              <p className="text-gray-600 mb-6">
+                Commercial roofing and coating specialists providing durable solutions for businesses throughout the Charlotte metro area.
+              </p>
+              <a
+                href="/companies"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:opacity-90 transition"
+              >
+                View Profile
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
