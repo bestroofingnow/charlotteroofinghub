@@ -213,77 +213,31 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Featured Partners */}
+      {/* Get Started CTA */}
       <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Our Featured Partners
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              These companies have been personally verified and support Charlotte Roofing Hub&apos;s mission to protect homeowners.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Residential Featured Partner */}
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-8 text-center">
-              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 rounded-full px-4 py-2 mb-4">
-                <CheckCircle className="w-4 h-4" />
-                <span className="text-sm font-medium">Featured Residential Roofer</span>
-              </div>
-              <div className="w-20 h-20 bg-primary rounded-xl flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4">
-                R
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Rise Roofing and Construction</h3>
-              <div className="flex items-center justify-center gap-2 text-amber-500 mb-4">
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <span className="text-gray-700 font-semibold ml-1">5.0</span>
-              </div>
-              <p className="text-gray-600 mb-6">
-                Trusted residential roofing experts serving Charlotte homeowners with quality craftsmanship and exceptional service.
-              </p>
-              <a
-                href="/companies"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-light transition"
-              >
-                View Profile
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-
-            {/* Commercial Featured Partner */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 text-center">
-              <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 rounded-full px-4 py-2 mb-4">
-                <CheckCircle className="w-4 h-4" />
-                <span className="text-sm font-medium">Featured Commercial Partner</span>
-              </div>
-              <div className="w-20 h-20 bg-secondary rounded-xl flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4">
-                W
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">We Coat</h3>
-              <div className="flex items-center justify-center gap-2 text-amber-500 mb-4">
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <span className="text-gray-700 font-semibold ml-1">5.0</span>
-              </div>
-              <p className="text-gray-600 mb-6">
-                Commercial roofing and coating specialists providing durable solutions for businesses throughout the Charlotte metro area.
-              </p>
-              <a
-                href="/companies"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:opacity-90 transition"
-              >
-                View Profile
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Ready to Find Your Perfect Roofer?
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+            Get an instant estimate and let us connect you with a verified local roofing company that matches your needs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://instantroofestimate.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary-light transition"
+            >
+              Get Instant Estimate
+              <ArrowRight className="w-5 h-5" />
+            </a>
+            <Link
+              href="/companies"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gray-100 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition"
+            >
+              Browse All Companies
+            </Link>
           </div>
         </div>
       </section>

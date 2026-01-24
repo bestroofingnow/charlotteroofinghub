@@ -5,7 +5,7 @@ import type { Company } from '@/types'
 // Criteria: 4.8+ Google rating, quality local companies
 
 export const companies: Company[] = [
-  // FEATURED COMPANY - Always first
+  // VERIFIED COMPANIES - Alphabetically sorted
   {
     id: 'best-roofing-now',
     name: 'Best Roofing Now LLC',
@@ -22,14 +22,58 @@ export const companies: Company[] = [
     reviewCount: 127,
     services: ['residential', 'commercial', 'repairs', 'inspections', 'gutters'],
     materials: ['architectural shingles', 'metal', 'TPO', 'EPDM', 'slate'],
-    isFeatured: true,
+    isFeatured: false,
+    isVerified: true,
+    logoUrl: null,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: 'rise-roofing-construction',
+    name: 'Rise Roofing and Construction',
+    slug: 'rise-roofing-construction',
+    description: 'Rise Roofing and Construction is a trusted residential roofing company serving Charlotte and the surrounding areas. Known for quality craftsmanship, exceptional customer service, and attention to detail. Our experienced team handles everything from roof repairs to complete replacements with professionalism and care.',
+    phone: '(704) 800-0010',
+    email: null,
+    website: null,
+    address: null,
+    city: 'Charlotte',
+    state: 'NC',
+    zipCode: '28202',
+    googleRating: 5.0,
+    reviewCount: 85,
+    services: ['residential', 'repairs', 'inspections', 'storm damage'],
+    materials: ['architectural shingles', 'metal'],
+    isFeatured: false,
+    isVerified: true,
+    logoUrl: null,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: 'we-coat',
+    name: 'We Coat',
+    slug: 'we-coat',
+    description: 'We Coat is a commercial roofing and coating specialist serving businesses throughout the Charlotte metro area. Specializing in roof coatings, waterproofing, and commercial roof maintenance, We Coat provides durable solutions that extend the life of commercial roofs and reduce energy costs.',
+    phone: '(704) 800-0011',
+    email: null,
+    website: null,
+    address: null,
+    city: 'Charlotte',
+    state: 'NC',
+    zipCode: '28202',
+    googleRating: 5.0,
+    reviewCount: 72,
+    services: ['commercial', 'roof coatings', 'waterproofing', 'maintenance', 'flat roofing'],
+    materials: ['silicone coatings', 'acrylic coatings', 'TPO', 'EPDM', 'spray foam'],
+    isFeatured: false,
     isVerified: true,
     logoUrl: null,
     createdAt: new Date(),
     updatedAt: new Date()
   },
 
-  // REAL VERIFIED COMPANIES
+  // MORE VERIFIED COMPANIES
   {
     id: 'charlottes-best-roofing',
     name: "Charlotte's Best Roofing and Gutters",
@@ -538,11 +582,12 @@ export const companies: Company[] = [
   }
 ]
 
-// Helper function to get featured company
-export const getFeaturedCompany = () => companies.find(c => c.isFeatured) || companies[0]
+// Helper function to get all companies (no featured concept)
+export const getAllCompanies = () => companies
 
-// Helper function to get non-featured companies
-export const getRegularCompanies = () => companies.filter(c => !c.isFeatured)
+// Legacy functions for compatibility - all companies are now equal
+export const getFeaturedCompany = () => null
+export const getRegularCompanies = () => companies
 
 // Helper function to get company by slug
 export const getCompanyBySlug = (slug: string) => companies.find(c => c.slug === slug)

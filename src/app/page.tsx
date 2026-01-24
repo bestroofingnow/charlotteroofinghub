@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import { Building2, ArrowRight, Home as HomeIcon, Warehouse, DollarSign, FileText, Star, ShieldCheck, UserCheck, Heart, MapPin, Wrench, AlertTriangle, CloudLightning } from 'lucide-react'
 import Hero from '@/components/shared/Hero'
-import FeaturedCompany from '@/components/companies/FeaturedCompany'
 import CompanyCard from '@/components/companies/CompanyCard'
 import FAQSection from '@/components/shared/FAQSection'
 import InstantEstimateCTA from '@/components/layout/InstantEstimateCTA'
-import { companies, getFeaturedCompany, getRegularCompanies } from '@/data/companies'
+import { companies, getRegularCompanies } from '@/data/companies'
 import { getFeaturedServices } from '@/data/services'
 import { getFeaturedNeighborhoods } from '@/data/neighborhoods'
 
@@ -46,7 +45,6 @@ const stats = [
 ]
 
 export default function HomePage() {
-  const featuredCompany = getFeaturedCompany()
   const topCompanies = getRegularCompanies().slice(0, 6)
   const featuredServices = getFeaturedServices().slice(0, 4)
   const featuredAreas = getFeaturedNeighborhoods().slice(0, 6)
@@ -55,9 +53,6 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <Hero />
-
-      {/* Featured Company Section */}
-      {featuredCompany && <FeaturedCompany company={featuredCompany} />}
 
       {/* Stats Section */}
       <section className="py-12 bg-white">
@@ -88,7 +83,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {topCompanies.map((company, index) => (
-              <CompanyCard key={company.id} company={company} rank={index + 2} />
+              <CompanyCard key={company.id} company={company} rank={index + 1} />
             ))}
           </div>
 
