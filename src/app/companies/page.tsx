@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Building2, Search, Filter, MapPin } from 'lucide-react'
 import CompanyCard from '@/components/companies/CompanyCard'
 import InstantEstimateCTA from '@/components/layout/InstantEstimateCTA'
-import { companies, getFeaturedCompany, getRegularCompanies } from '@/data/companies'
+import { companies, getAllCompanies } from '@/data/companies'
 
 export const metadata: Metadata = {
   title: 'Top Roofing Companies in Charlotte NC | 4.8+ Star Rated',
@@ -61,8 +61,7 @@ function CompanyListSchema() {
 }
 
 export default function CompaniesPage() {
-  const featuredCompany = getFeaturedCompany()
-  const regularCompanies = getRegularCompanies()
+  const allCompanies = getAllCompanies()
 
   return (
     <>
@@ -80,8 +79,8 @@ export default function CompaniesPage() {
               Top-Rated Roofing Companies in Charlotte, NC
             </h1>
             <p className="text-lg text-white/90 mb-6">
-              Browse {companies.length}+ handpicked roofing companies with 4.8+ star Google ratings.
-              We feature quality local roofers who deserve more visibility.
+              Verified roofing companies in Charlotte, all with 4.8+ star Google ratings.
+              Listed for homeowner education — not promotion.
             </p>
 
             {/* Search Bar */}
@@ -128,29 +127,16 @@ export default function CompaniesPage() {
       {/* Companies Grid */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Featured Company First */}
-          {featuredCompany && (
-            <div className="mb-8">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 bg-amber-400 rounded-full"></span>
-                Featured Company
-              </h2>
-              <div className="max-w-md">
-                <CompanyCard company={featuredCompany} rank={1} />
-              </div>
-            </div>
-          )}
-
           {/* All Companies */}
           <div className="mb-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
-              All Companies ({regularCompanies.length})
+              All Companies ({allCompanies.length})
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {regularCompanies.map((company, index) => (
-              <CompanyCard key={company.id} company={company} rank={index + 2} />
+            {allCompanies.map((company, index) => (
+              <CompanyCard key={company.id} company={company} rank={index + 1} />
             ))}
           </div>
 

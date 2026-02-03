@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: "Charlotte Roofing Hub | Find Top-Rated Roofers in Charlotte NC",
     template: "%s | Charlotte Roofing Hub"
   },
-  description: "Charlotte's only locally-verified roofing directory. Every company is personally vetted - we meet owners face-to-face and run background checks. Free, non-profit resource helping Charlotte homeowners find trusted roofers with 4.8+ stars.",
+  description: "Charlotte's only locally-verified roofing directory. Every company is personally vetted - we meet owners face-to-face and run background checks. A free roofing education resource created by local Charlotte roofers to help homeowners find trusted roofers with 4.8+ stars.",
   keywords: [
     // Primary Charlotte Keywords
     "roofing companies charlotte nc",
@@ -139,13 +139,12 @@ function WebsiteSchema() {
 function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "NGO",
+    "@type": "Organization",
     name: "Charlotte Roofing Hub",
     url: "https://charlotteroofinghub.com",
     logo: "https://charlotteroofinghub.com/logo.png",
-    description: "A free, non-profit directory helping Charlotte homeowners find trusted roofing companies. Every listed contractor is personally verified through owner meetings and background checks.",
+    description: "A free roofing education resource created and funded by local Charlotte roofing companies. Every listed contractor is personally verified through owner meetings and background checks.",
     slogan: "Locally Verified. Background Checked. Trusted by Charlotte.",
-    nonprofitStatus: "Nonprofit501c3",
     areaServed: {
       "@type": "City",
       name: "Charlotte",
@@ -164,7 +163,7 @@ function OrganizationSchema() {
       "Roofing contractor verification",
       "Background checks for contractors",
       "Charlotte roofing companies",
-      "Consumer protection"
+      "Roofing education"
     ]
   };
   return (
@@ -208,9 +207,8 @@ function ProfessionalServiceSchema() {
     "@type": "ProfessionalService",
     name: "Charlotte Roofing Hub",
     url: "https://charlotteroofinghub.com",
-    description: "Charlotte's only locally-verified roofing directory. A free, non-profit resource where every company is personally vetted - we meet owners face-to-face and run background checks to protect Charlotte homeowners.",
+    description: "Charlotte's only locally-verified roofing directory. A free roofing education resource created by local Charlotte roofers where every company is personally vetted through face-to-face meetings and background checks.",
     serviceType: "Verified Roofing Contractor Directory",
-    additionalType: "https://schema.org/NGO",
     slogan: "Locally Verified. Background Checked. Trusted by Charlotte.",
     areaServed: [
       {
@@ -267,7 +265,7 @@ function GlobalFAQSchema() {
         name: "How does Charlotte Roofing Hub verify roofing companies?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Charlotte Roofing Hub personally verifies every roofing company through a rigorous process: 1) We meet face-to-face with company owners, 2) We conduct thorough background checks, 3) We verify licensing, insurance, and certifications, 4) We confirm 4.8+ star Google ratings and customer reviews. As a free, non-profit organization, our only goal is protecting Charlotte homeowners."
+          text: "Charlotte Roofing Hub personally verifies every roofing company through a rigorous process: 1) We meet face-to-face with company owners, 2) We conduct thorough background checks, 3) We verify licensing, insurance, and certifications, 4) We confirm 4.8+ star Google ratings and customer reviews. Created by local Charlotte roofers, our goal is educating and protecting homeowners."
         }
       },
       {
@@ -275,7 +273,7 @@ function GlobalFAQSchema() {
         name: "Is Charlotte Roofing Hub free to use?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes, Charlotte Roofing Hub is completely free for homeowners. We are a non-profit organization dedicated to helping Charlotte residents find trustworthy roofing contractors. We don't charge homeowners anything - our mission is simply to protect our community from bad contractors."
+          text: "Yes, Charlotte Roofing Hub is completely free for homeowners. We are a roofing education resource created and funded by six local Charlotte roofing companies. We don't charge homeowners anything - our mission is to educate homeowners and help them find trustworthy roofing contractors."
         }
       },
       {

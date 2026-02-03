@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Phone, Globe, MapPin, Mail, Star, CheckCircle, ArrowLeft, ExternalLink, Award, Clock, Shield } from 'lucide-react'
+import { Phone, Globe, MapPin, Mail, Star, CheckCircle, ArrowLeft, ExternalLink, Building2, Clock, Shield, ArrowRight } from 'lucide-react'
 import StarRating from '@/components/shared/StarRating'
 import InstantEstimateCTA from '@/components/layout/InstantEstimateCTA'
 import CompanyCard from '@/components/companies/CompanyCard'
-import { companies, getCompanyBySlug, getRegularCompanies } from '@/data/companies'
+import { companies, getCompanyBySlug, getAllCompanies } from '@/data/companies'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -46,7 +46,7 @@ export default async function CompanyDetailPage({ params }: PageProps) {
     notFound()
   }
 
-  const relatedCompanies = getRegularCompanies()
+  const relatedCompanies = getAllCompanies()
     .filter(c => c.id !== company.id)
     .slice(0, 3)
 
@@ -121,7 +121,7 @@ export default async function CompanyDetailPage({ params }: PageProps) {
       </div>
 
       {/* Company Header */}
-      <section className={`py-12 ${company.isFeatured ? 'bg-gradient-to-br from-amber-50 to-orange-50' : 'bg-white'}`}>
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/companies"
@@ -146,10 +146,10 @@ export default async function CompanyDetailPage({ params }: PageProps) {
             {/* Company Info */}
             <div className="flex-grow">
               <div className="flex flex-wrap items-center gap-3 mb-2">
-                {company.isFeatured && (
-                  <span className="inline-flex items-center gap-1 px-3 py-1 featured-badge rounded-full text-sm">
-                    <Award className="w-4 h-4" />
-                    Featured Company
+                {company.isFoundingMember && (
+                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                    <Building2 className="w-4 h-4" />
+                    Founding Member
                   </span>
                 )}
                 {company.isVerified && (
@@ -180,39 +180,16 @@ export default async function CompanyDetailPage({ params }: PageProps) {
                 {company.description || `${company.name} is a trusted roofing contractor serving ${company.city} and the greater Charlotte area. With a ${company.googleRating} star Google rating from ${company.reviewCount} reviews, they specialize in quality roofing services for residential and commercial properties.`}
               </p>
 
-              {/* Contact Buttons */}
-              <div className="flex flex-wrap gap-3">
-                {company.phone && (
-                  <a
-                    href={`tel:${company.phone}`}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-light transition"
-                  >
-                    <Phone className="w-5 h-5" />
-                    {company.phone}
-                  </a>
-                )}
-                {company.website && (
-                  <a
-                    href={company.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition"
-                  >
-                    <Globe className="w-5 h-5" />
-                    Visit Website
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                )}
-                {company.email && (
-                  <a
-                    href={`mailto:${company.email}`}
-                    className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition"
-                  >
-                    <Mail className="w-5 h-5" />
-                    Email
-                  </a>
-                )}
-              </div>
+              {/* Get Estimate CTA */}
+              <a
+                href="https://instantroofestimate.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-red-600 transition"
+              >
+                Get Instant Roof Estimate
+                <ArrowRight className="w-5 h-5" />
+              </a>
             </div>
           </div>
         </div>
@@ -313,24 +290,36 @@ export default async function CompanyDetailPage({ params }: PageProps) {
                   {company.phone && (
                     <a
                       href={`tel:${company.phone}`}
-                      className="flex items-center gap-3 text-gray-700 hover:text-primary"
+                      className="flex items-center gap-3 text-gray-700 hover:text-primary text-sm"
                     >
-                      <Phone className="w-5 h-5 text-primary" />
+                      <Phone className="w-4 h-4 text-primary" />
                       <span>{company.phone}</span>
                     </a>
                   )}
                   {company.email && (
                     <a
                       href={`mailto:${company.email}`}
-                      className="flex items-center gap-3 text-gray-700 hover:text-primary"
+                      className="flex items-center gap-3 text-gray-700 hover:text-primary text-sm"
                     >
-                      <Mail className="w-5 h-5 text-primary" />
+                      <Mail className="w-4 h-4 text-primary" />
                       <span className="break-all">{company.email}</span>
                     </a>
                   )}
+                  {company.website && (
+                    <a
+                      href={company.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-gray-700 hover:text-primary text-sm"
+                    >
+                      <Globe className="w-4 h-4 text-primary" />
+                      <span>Visit Website</span>
+                      <ExternalLink className="w-3 h-3 text-gray-400" />
+                    </a>
+                  )}
                   {company.address && (
-                    <div className="flex items-start gap-3 text-gray-700">
-                      <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-3 text-gray-700 text-sm">
+                      <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                       <span>{company.address}<br />{company.city}, {company.state} {company.zipCode}</span>
                     </div>
                   )}

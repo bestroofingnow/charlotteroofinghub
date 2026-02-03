@@ -68,23 +68,15 @@ export default function CommercialPage() {
               Expert commercial roofing services for Charlotte businesses. TPO, EPDM, flat roof repair,
               and preventive maintenance from licensed commercial contractors.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/companies?service=commercial"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition"
-              >
-                Find Commercial Roofers
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <a
-                href="https://instantroofestimate.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-red-600 transition"
-              >
-                Request Quote
-              </a>
-            </div>
+            <a
+              href="https://instantroofestimate.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-red-600 transition"
+            >
+              Get Instant Roof Estimate
+              <ArrowRight className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </section>
@@ -265,20 +257,15 @@ export default function CommercialPage() {
           <p className="text-white/90 mb-8">
             Connect with Charlotte&apos;s experienced commercial roofing contractors.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/companies"
-              className="px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-gray-100 transition"
-            >
-              Find Commercial Roofers
-            </Link>
-            <Link
-              href="/contact"
-              className="px-8 py-4 bg-secondary text-white font-bold rounded-lg hover:bg-red-600 transition"
-            >
-              Request Consultation
-            </Link>
-          </div>
+          <a
+            href="https://instantroofestimate.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-gray-100 transition"
+          >
+            Get Instant Roof Estimate
+            <ArrowRight className="w-5 h-5" />
+          </a>
         </div>
       </section>
     </>

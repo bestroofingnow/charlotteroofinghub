@@ -75,7 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/companies/${company.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: company.isFeatured ? 0.9 : 0.8,
+    priority: 0.8,
   }))
 
   // Dynamic area/neighborhood pages - high priority for hyper-local SEO

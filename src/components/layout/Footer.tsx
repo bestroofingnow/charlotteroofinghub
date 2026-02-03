@@ -4,7 +4,6 @@ import { Home, Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from 'lucide-r
 const footerLinks = {
   companies: [
     { name: 'Browse Companies', href: '/companies' },
-    { name: 'Featured Roofers', href: '/companies?featured=true' },
     { name: 'Add Your Company', href: '/contact' },
   ],
   services: [
@@ -76,7 +75,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-white/80 text-sm mb-4">
-              Charlotte&apos;s only locally-verified roofing directory. Free, non-profit.
+              A roofing education resource created by local Charlotte roofers.
             </p>
             <div className="flex items-center gap-2 text-sm text-white/70">
               <MapPin className="w-4 h-4" />
@@ -177,7 +176,7 @@ export default function Footer() {
               &copy; {currentYear} Charlotte Roofing Hub. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
-              <span className="text-sm text-white/70">A free community resource for Charlotte homeowners</span>
+              <span className="text-sm text-white/70">A roofing education resource created by local Charlotte roofing companies</span>
             </div>
           </div>
         </div>

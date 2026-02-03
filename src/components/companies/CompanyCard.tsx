@@ -1,4 +1,4 @@
-import { Phone, MapPin, ExternalLink, CheckCircle, Award } from 'lucide-react'
+import { MapPin, CheckCircle, Building2 } from 'lucide-react'
 import Link from 'next/link'
 import StarRating from '@/components/shared/StarRating'
 import type { Company } from '@/types'
@@ -11,14 +11,6 @@ interface CompanyCardProps {
 export default function CompanyCard({ company, rank }: CompanyCardProps) {
   return (
     <article className="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100">
-      {/* Featured Badge */}
-      {company.isFeatured && (
-        <div className="bg-gradient-to-r from-amber-400 to-orange-400 text-gray-900 px-4 py-2 flex items-center justify-center gap-2">
-          <Award className="w-4 h-4" />
-          <span className="text-sm font-bold">Featured Company</span>
-        </div>
-      )}
-
       <div className="p-5 md:p-6">
         {/* Header */}
         <div className="flex items-start gap-4 mb-4">
@@ -53,6 +45,14 @@ export default function CompanyCard({ company, rank }: CompanyCardProps) {
             />
           </div>
         </div>
+
+        {/* Founding Member indicator */}
+        {company.isFoundingMember && (
+          <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-3">
+            <Building2 className="w-3.5 h-3.5" />
+            <span>Founding Member</span>
+          </div>
+        )}
 
         {/* Location */}
         <div className="flex items-center gap-2 text-gray-600 text-sm mb-4">
@@ -94,34 +94,14 @@ export default function CompanyCard({ company, rank }: CompanyCardProps) {
           </div>
         )}
 
-        {/* Action Buttons */}
-        <div className="flex gap-2 pt-2 border-t border-gray-100">
+        {/* Action Button */}
+        <div className="pt-2 border-t border-gray-100">
           <Link
             href={`/companies/${company.slug}`}
-            className="flex-1 text-center py-2.5 bg-primary text-white font-medium rounded-lg hover:bg-primary-light transition text-sm"
+            className="block w-full text-center py-2.5 bg-primary text-white font-medium rounded-lg hover:bg-primary-light transition text-sm"
           >
             View Profile
           </Link>
-          {company.phone && (
-            <a
-              href={`tel:${company.phone}`}
-              className="flex items-center justify-center gap-1 px-4 py-2.5 border border-primary text-primary font-medium rounded-lg hover:bg-primary/5 transition text-sm"
-            >
-              <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline">Call</span>
-            </a>
-          )}
-          {company.website && (
-            <a
-              href={company.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center px-3 py-2.5 border border-gray-200 text-gray-600 rounded-lg hover:bg-gray-50 transition"
-              title="Visit Website"
-            >
-              <ExternalLink className="w-4 h-4" />
-            </a>
-          )}
         </div>
       </div>
     </article>

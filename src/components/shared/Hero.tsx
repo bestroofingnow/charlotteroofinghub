@@ -1,4 +1,4 @@
-import { Search, Building2, Home as HomeIcon, DollarSign, ArrowRight, ShieldCheck, UserCheck, Heart } from 'lucide-react'
+import { Search, Building2, Home as HomeIcon, DollarSign, ArrowRight, ShieldCheck, UserCheck } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Hero() {
@@ -9,7 +9,7 @@ export default function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
             <ShieldCheck className="w-4 h-4 text-green-400" />
-            <span className="text-sm font-medium">Free Non-Profit | Every Company Personally Verified</span>
+            <span className="text-sm font-medium">Community Roofing Education | Built by Charlotte Roofers</span>
           </div>
 
           {/* Main Headline - Voice Search Optimized */}
@@ -19,8 +19,8 @@ export default function Hero() {
 
           {/* Subheadline - Trust Messaging */}
           <p className="hero-description text-lg md:text-xl text-white/90 mb-6 max-w-2xl mx-auto" data-speakable="true">
-            We personally meet every roofing company owner and run background checks.
-            A free, non-profit resource protecting Charlotte homeowners since 2024.
+            A free roofing education resource created by local Charlotte roofers
+            to help homeowners make informed decisions about their roofs.
           </p>
 
           {/* Trust Badges */}
@@ -34,8 +34,8 @@ export default function Hero() {
               <span className="text-sm">Background Checked</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-              <Heart className="w-4 h-4 text-green-400" />
-              <span className="text-sm">100% Free Non-Profit</span>
+              <Building2 className="w-4 h-4 text-green-400" />
+              <span className="text-sm">Founded by Local Roofers</span>
             </div>
           </div>
 

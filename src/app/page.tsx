@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Building2, ArrowRight, Home as HomeIcon, Warehouse, DollarSign, FileText, Star, ShieldCheck, UserCheck, Heart, MapPin, Wrench, AlertTriangle, CloudLightning } from 'lucide-react'
+import { Building2, ArrowRight, Home as HomeIcon, Warehouse, DollarSign, FileText, Star, ShieldCheck, UserCheck, MapPin, Wrench, AlertTriangle, CloudLightning } from 'lucide-react'
 import Hero from '@/components/shared/Hero'
 import CompanyCard from '@/components/companies/CompanyCard'
 import FAQSection from '@/components/shared/FAQSection'
@@ -12,11 +12,11 @@ import { getFeaturedNeighborhoods } from '@/data/neighborhoods'
 const homepageFAQs = [
   {
     question: "How does Charlotte Roofing Hub verify roofing companies?",
-    answer: "We personally verify every roofing company through a rigorous local process: 1) We meet face-to-face with company owners, 2) We conduct thorough background checks, 3) We verify licensing, insurance, and certifications, 4) We confirm 4.8+ star Google ratings. As a free, non-profit organization, our only goal is protecting Charlotte homeowners from bad contractors."
+    answer: "Charlotte Roofing Hub was created by local roofing companies to help homeowners find trustworthy contractors. We verify every listed company through a rigorous process: 1) Face-to-face meetings with company owners, 2) Thorough background checks, 3) Verification of licensing, insurance, and certifications, 4) Confirmation of 4.8+ star Google ratings."
   },
   {
     question: "Is Charlotte Roofing Hub free to use?",
-    answer: "Yes! Charlotte Roofing Hub is 100% free for homeowners. We are a local non-profit organization dedicated to helping Charlotte residents find trustworthy roofing contractors. We don't charge homeowners anything - our mission is simply to protect our community."
+    answer: "Yes, Charlotte Roofing Hub is 100% free for homeowners. We're funded by a group of local Charlotte roofing companies — Best Roofing Now, Rise Roofing & Restoration, A Roofing Treat, Roofing Solar and More, We Coat, and Weather Roofing — who created this resource to educate homeowners about roofing. No company receives special treatment or promotion."
   },
   {
     question: "Who is the best roofing company in Charlotte NC?",
@@ -28,7 +28,7 @@ const homepageFAQs = [
   },
   {
     question: "Why should I trust Charlotte Roofing Hub over other directories?",
-    answer: "Unlike other directories that accept paid listings, we're a free non-profit that personally vets every company. We meet owners face-to-face, run background checks, and only list companies with 4.8+ star ratings. We're Charlotte locals protecting our neighbors - not a corporation selling leads."
+    answer: "Charlotte Roofing Hub was built by local Charlotte roofing companies who believe in transparency and education. We personally vet every company, run background checks, and only list companies with 4.8+ star ratings. Our founding companies are held to the same standards as every other listed company — no exceptions."
   },
   {
     question: "How long does a roof replacement take in Charlotte?",
@@ -254,7 +254,7 @@ export default function HomePage() {
               Why Trust Charlotte Roofing Hub?
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We&apos;re not like other directories. We&apos;re Charlotte locals who personally verify every company to protect our neighbors.
+              Created by Charlotte roofing companies to help homeowners make informed decisions about their roofs.
             </p>
           </div>
 
@@ -290,12 +290,12 @@ export default function HomePage() {
             </div>
 
             <div className="text-center p-6 bg-gray-50 rounded-xl">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-8 h-8 text-red-500" />
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Building2 className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="font-bold text-lg mb-2">100% Free Non-Profit</h3>
+              <h3 className="font-bold text-lg mb-2">Founded by Local Roofers</h3>
               <p className="text-gray-600 text-sm">
-                We&apos;re a non-profit with one mission: help Charlotte homeowners find trustworthy roofers. No paid listings. Ever.
+                Built by six Charlotte roofing companies committed to homeowner education. All companies — founding and otherwise — meet the same listing standards.
               </p>
             </div>
           </div>
@@ -314,27 +314,19 @@ export default function HomePage() {
       <section className="py-16 hero-gradient text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Ready to Find Your Perfect Roofer?
+            Need a Roof Estimate?
           </h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            Browse our curated list of Charlotte&apos;s best roofing companies, or get an instant estimate for your roof today.
+            Get an instant, accurate roof estimate for your Charlotte home — free and in under 60 seconds.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/companies"
-              className="px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-gray-100 transition"
-            >
-              Browse Companies
-            </Link>
-            <a
-              href="https://instantroofestimate.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 bg-secondary text-white font-bold rounded-lg hover:bg-red-600 transition"
-            >
-              Get Instant Estimate
-            </a>
-          </div>
+          <a
+            href="https://instantroofestimate.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-4 bg-secondary text-white font-bold rounded-lg hover:bg-red-600 transition text-lg"
+          >
+            Get Instant Roof Estimate
+          </a>
         </div>
       </section>
     </>

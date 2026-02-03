@@ -64,7 +64,7 @@ export default function ContactPage() {
                 <h2 className="text-lg font-bold text-gray-900 mb-4">Common Inquiries</h2>
                 <ul className="space-y-3 text-sm text-gray-600">
                   <li>• Get my roofing company listed</li>
-                  <li>• Advertise on the platform</li>
+                  <li>• Learn about Charlotte Roofing Hub</li>
                   <li>• Report incorrect information</li>
                   <li>• Partnership opportunities</li>
                   <li>• General questions</li>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                           >
                             <option value="">Select a subject</option>
                             <option value="listing">Get My Company Listed</option>
-                            <option value="advertising">Advertising Inquiry</option>
+                            <option value="about">Learn About Charlotte Roofing Hub</option>
                             <option value="correction">Report Incorrect Info</option>
                             <option value="partnership">Partnership Opportunity</option>
                             <option value="general">General Question</option>

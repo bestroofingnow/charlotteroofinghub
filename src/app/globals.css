@@ -98,13 +98,6 @@ button, a, input, select, textarea {
   animation: pulse-glow 2s infinite;
 }
 
-/* Featured badge */
-.featured-badge {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-  color: #1a1a2e;
-  font-weight: 600;
-}
-
 /* Mobile menu animation */
 .mobile-menu-enter {
   transform: translateX(100%);
