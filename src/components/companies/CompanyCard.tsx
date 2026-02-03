@@ -46,11 +46,17 @@ export default function CompanyCard({ company, rank }: CompanyCardProps) {
           </div>
         </div>
 
-        {/* Founding Member indicator */}
-        {company.isFoundingMember && (
+        {/* Founder / Contributor indicator */}
+        {company.isFounder && (
           <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-3">
             <Building2 className="w-3.5 h-3.5" />
-            <span>Founding Member</span>
+            <span>Founder</span>
+          </div>
+        )}
+        {company.isContributor && (
+          <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-3">
+            <Building2 className="w-3.5 h-3.5" />
+            <span>Local Contributor</span>
           </div>
         )}
 

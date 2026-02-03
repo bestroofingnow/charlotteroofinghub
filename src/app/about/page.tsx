@@ -4,7 +4,7 @@ import { Building2, Star, Target, Shield, ArrowRight, FileText, UserCheck, Shiel
 
 export const metadata: Metadata = {
   title: 'About Charlotte Roofing Hub | Roofing Education by Local Roofers',
-  description: 'Charlotte Roofing Hub is a free roofing education resource created and funded by local Charlotte roofing companies. Learn about our founding companies and mission.',
+  description: 'Charlotte Roofing Hub is a free roofing education resource founded by Best Roofing Now and supported by local Charlotte roofing companies. Learn about our mission and contributors.',
   keywords: [
     'verified roofing companies charlotte',
     'background checked roofers',
@@ -13,8 +13,7 @@ export const metadata: Metadata = {
   ]
 }
 
-const foundingCompanies = [
-  { name: 'Best Roofing Now LLC', desc: 'Veteran-owned residential and commercial roofing' },
+const contributorCompanies = [
   { name: 'Rise Roofing & Restoration', desc: 'GAF Master Elite storm damage and restoration specialists' },
   { name: 'A Roofing Treat LLC', desc: 'Certified Roof Maxx dealer for roof life extension' },
   { name: 'Roofing Solar and More LLC', desc: 'GAF Certified Plus roofing and solar installation' },
@@ -53,22 +52,23 @@ export default function AboutPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Our Mission</h2>
             </div>
             <p className="text-lg text-gray-600 text-center mb-8">
-              Charlotte Roofing Hub was created by six local roofing companies who believe homeowners
-              deserve honest, educational information about roofing. Too many homeowners get taken
+              Charlotte Roofing Hub was founded by James at <strong>Best Roofing Now LLC</strong> because
+              homeowners deserve honest, educational information about roofing. Too many homeowners get taken
               advantage of by unverified contractors — we wanted to change that.
             </p>
             <p className="text-lg text-gray-600 text-center mb-8">
               <strong>This site is 100% free for homeowners.</strong> We don&apos;t sell leads and no company
-              receives special promotion. Our goal is roofing education for the Charlotte community.
+              receives special promotion. Five other great local roofing companies contribute to this resource,
+              and our goal is roofing education for the Charlotte community.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-gray-50 rounded-xl p-6">
                 <Building2 className="w-8 h-8 text-primary mb-4" />
-                <h3 className="font-bold text-gray-900 mb-2">Built by Local Roofers</h3>
+                <h3 className="font-bold text-gray-900 mb-2">Founded by Best Roofing Now</h3>
                 <p className="text-gray-600 text-sm">
-                  Six Charlotte-area roofing companies fund and maintain this resource. They are held
-                  to the same listing standards as every other company on the site.
+                  James at Best Roofing Now created Charlotte Roofing Hub to help homeowners choose
+                  their roofer with confidence. Five local contributor companies also support this resource.
                 </p>
               </div>
 
@@ -76,8 +76,8 @@ export default function AboutPage() {
                 <Shield className="w-8 h-8 text-primary mb-4" />
                 <h3 className="font-bold text-gray-900 mb-2">Transparency First</h3>
                 <p className="text-gray-600 text-sm">
-                  No company receives promotional treatment. All listed companies — founding and
-                  otherwise — earn their spot through our verification process and reputation.
+                  No company receives promotional treatment. All listed companies — the founder, contributors,
+                  and every other company — earn their spot through our verification process and reputation.
                 </p>
               </div>
             </div>
@@ -85,27 +85,56 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founding Companies Section */}
+      {/* Founder & Contributors Section */}
       <section className="py-12 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
+          {/* Founder */}
+          <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Our Founding Companies
+              Our Founder
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              These six local roofing companies created and fund Charlotte Roofing Hub. They are held
-              to the same listing standards as every other company — no exceptions.
+              Charlotte Roofing Hub was founded and is managed by James at Best Roofing Now LLC.
+            </p>
+          </div>
+
+          <div className="max-w-md mx-auto mb-12">
+            <div className="bg-white rounded-xl p-6 shadow-sm border-2 border-primary/20">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-lg font-bold text-primary">B</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900">Best Roofing Now LLC</h3>
+                  <span className="text-xs text-primary font-medium">Founder</span>
+                </div>
+              </div>
+              <p className="text-sm text-gray-600">Veteran-owned residential and commercial roofing serving Charlotte and surrounding areas</p>
+            </div>
+          </div>
+
+          {/* Contributors */}
+          <div className="text-center mb-8">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+              Local Contributors
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              These local roofing companies contribute to Charlotte Roofing Hub. They are great companies that James
+              knows and has worked with. All contributors are held to the same listing standards as every other company.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {foundingCompanies.map((company) => (
+            {contributorCompanies.map((company) => (
               <div key={company.name} className="bg-white rounded-xl p-5 shadow-sm">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-sm font-bold text-primary">{company.name.charAt(0)}</span>
                   </div>
-                  <h3 className="font-bold text-gray-900 text-sm">{company.name}</h3>
+                  <div>
+                    <h3 className="font-bold text-gray-900 text-sm">{company.name}</h3>
+                    <span className="text-xs text-gray-500">Contributor</span>
+                  </div>
                 </div>
                 <p className="text-xs text-gray-600">{company.desc}</p>
               </div>
@@ -123,7 +152,7 @@ export default function AboutPage() {
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Before any company appears on our site, they must pass our rigorous verification.
-              This applies equally to founding companies and all other listed companies.
+              This applies equally to the founder, contributors, and all other listed companies.
             </p>
           </div>
 

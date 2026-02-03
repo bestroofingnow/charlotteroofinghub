@@ -16,7 +16,7 @@ const homepageFAQs = [
   },
   {
     question: "Is Charlotte Roofing Hub free to use?",
-    answer: "Yes, Charlotte Roofing Hub is 100% free for homeowners. We're funded by a group of local Charlotte roofing companies — Best Roofing Now, Rise Roofing & Restoration, A Roofing Treat, Roofing Solar and More, We Coat, and Weather Roofing — who created this resource to educate homeowners about roofing. No company receives special treatment or promotion."
+    answer: "Yes, Charlotte Roofing Hub is 100% free for homeowners. It was founded by James at Best Roofing Now LLC and is supported by five local contributor companies — Rise Roofing & Restoration, A Roofing Treat, Roofing Solar and More, We Coat, and Weather Roofing. Our goal is to educate homeowners about roofing. No company receives special treatment or promotion."
   },
   {
     question: "Who is the best roofing company in Charlotte NC?",
@@ -28,7 +28,7 @@ const homepageFAQs = [
   },
   {
     question: "Why should I trust Charlotte Roofing Hub over other directories?",
-    answer: "Charlotte Roofing Hub was built by local Charlotte roofing companies who believe in transparency and education. We personally vet every company, run background checks, and only list companies with 4.8+ star ratings. Our founding companies are held to the same standards as every other listed company — no exceptions."
+    answer: "Charlotte Roofing Hub was founded by James at Best Roofing Now and is supported by five local contributor companies who believe in transparency and education. We personally vet every company, run background checks, and only list companies with 4.8+ star ratings. The founder and all contributors are held to the same standards as every other listed company — no exceptions."
   },
   {
     question: "How long does a roof replacement take in Charlotte?",
@@ -293,9 +293,9 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Building2 className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="font-bold text-lg mb-2">Founded by Local Roofers</h3>
+              <h3 className="font-bold text-lg mb-2">Founded by a Local Roofer</h3>
               <p className="text-gray-600 text-sm">
-                Built by six Charlotte roofing companies committed to homeowner education. All companies — founding and otherwise — meet the same listing standards.
+                Founded by Best Roofing Now and supported by five local contributor companies committed to homeowner education. All companies meet the same listing standards.
               </p>
             </div>
           </div>

@@ -143,7 +143,7 @@ function OrganizationSchema() {
     name: "Charlotte Roofing Hub",
     url: "https://charlotteroofinghub.com",
     logo: "https://charlotteroofinghub.com/logo.png",
-    description: "A free roofing education resource created and funded by local Charlotte roofing companies. Every listed contractor is personally verified through owner meetings and background checks.",
+    description: "A free roofing education resource founded by Best Roofing Now and supported by local Charlotte roofing companies. Every listed contractor is personally verified through owner meetings and background checks.",
     slogan: "Locally Verified. Background Checked. Trusted by Charlotte.",
     areaServed: {
       "@type": "City",
@@ -265,7 +265,7 @@ function GlobalFAQSchema() {
         name: "How does Charlotte Roofing Hub verify roofing companies?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Charlotte Roofing Hub personally verifies every roofing company through a rigorous process: 1) We meet face-to-face with company owners, 2) We conduct thorough background checks, 3) We verify licensing, insurance, and certifications, 4) We confirm 4.8+ star Google ratings and customer reviews. Created by local Charlotte roofers, our goal is educating and protecting homeowners."
+          text: "Charlotte Roofing Hub personally verifies every roofing company through a rigorous process: 1) We meet face-to-face with company owners, 2) We conduct thorough background checks, 3) We verify licensing, insurance, and certifications, 4) We confirm 4.8+ star Google ratings and customer reviews. Founded by Best Roofing Now and supported by local Charlotte roofers, our goal is educating and protecting homeowners."
         }
       },
       {
@@ -273,7 +273,7 @@ function GlobalFAQSchema() {
         name: "Is Charlotte Roofing Hub free to use?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes, Charlotte Roofing Hub is completely free for homeowners. We are a roofing education resource created and funded by six local Charlotte roofing companies. We don't charge homeowners anything - our mission is to educate homeowners and help them find trustworthy roofing contractors."
+          text: "Yes, Charlotte Roofing Hub is completely free for homeowners. Founded by Best Roofing Now LLC and supported by five local contributor companies, we don't charge homeowners anything - our mission is to educate homeowners and help them find trustworthy roofing contractors."
         }
       },
       {

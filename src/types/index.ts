@@ -16,7 +16,8 @@ export interface Company {
   reviewCount?: number | null
   services: string[]
   materials: string[]
-  isFoundingMember: boolean
+  isFounder: boolean
+  isContributor: boolean
   isVerified: boolean
   logoUrl?: string | null
   createdAt: Date

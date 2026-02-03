@@ -146,10 +146,16 @@ export default async function CompanyDetailPage({ params }: PageProps) {
             {/* Company Info */}
             <div className="flex-grow">
               <div className="flex flex-wrap items-center gap-3 mb-2">
-                {company.isFoundingMember && (
+                {company.isFounder && (
                   <span className="inline-flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
                     <Building2 className="w-4 h-4" />
-                    Founding Member
+                    Founder
+                  </span>
+                )}
+                {company.isContributor && (
+                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                    <Building2 className="w-4 h-4" />
+                    Local Contributor
                   </span>
                 )}
                 {company.isVerified && (
